@@ -50,7 +50,12 @@
   <main>
     <section class="hero-section">
       <div class="hero-grid container">
-        <div class="hero-copy" data-aos="fade-right" data-aos-duration="1000">
+        <div class="hero-visual" data-aos="fade-right" data-aos-duration="1000">
+          <div class="hero-frame">
+            <img src="assets/images/AP5.png" alt="Arun Prasath P — Industrial Advisor" class="hero-img" loading="eager" decoding="async" />
+          </div>
+        </div>
+        <div class="hero-copy" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="150">
           <span class="eyebrow">Industrial Growth Advisory</span>
           <div class="hero-tag">Trusted advisor to CEOs, plant leaders and enterprise operations across India & GCC.</div>
           <h1>Transforming material handling into measurable business impact.</h1>
@@ -62,11 +67,6 @@
           <div class="hero-quotes">
             <div class="hero-tag">Strategic foresight for safer, more productive industrial assets.</div>
             <div class="hero-tag">Market entry, partner alignment and execution discipline for premium growth.</div>
-          </div>
-        </div>
-        <div class="hero-visual" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="150">
-          <div class="hero-frame">
-            <img src="assets/images/AP5.png" alt="Arun Prasath P — Industrial Advisor" class="hero-img" loading="eager" decoding="async" />
           </div>
         </div>
       </div>
@@ -449,30 +449,143 @@
           <img src="assets/images/AP4.png" alt="Arun Prasath P ready for a business conversation" loading="lazy" decoding="async" />
         </div>
         <div class="connect-panel" data-aos="fade-up" data-aos-delay="100">
+          <div class="form-progress">
+            <div class="form-progress-bar" id="form-progress-bar"></div>
+          </div>
+          
           <span class="section-eyebrow">Contact</span>
           <h2>Contact Arun Prasath</h2>
           <p class="section-intro">Share a few details about your business requirement, partnership idea, or operational challenge.</p>
-          <form id="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+          
+          <form id="contact-form" data-whatsapp-phone="919894400663" novalidate>
             <div class="form-row">
-              <div>
-                <label for="name">Name <span aria-hidden="true">*</span></label>
-                <input id="name" name="name" type="text" required />
+              <div class="form-group">
+                <div class="input-wrapper">
+                  <span class="input-icon-left">
+                    <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M20 21a8 8 0 0 0-16 0"/><circle cx="12" cy="7" r="4"/></svg>
+                  </span>
+                  <input id="name" name="name" type="text" placeholder=" " required />
+                  <label for="name">Name <span class="required-mark" aria-hidden="true">*</span></label>
+                  <span class="validation-status-icon" aria-hidden="true"></span>
+                </div>
+                <span class="validation-message" id="name-validation" aria-live="polite"></span>
               </div>
-              <div>
-                <label for="company">Company</label>
-                <input id="company" name="company" type="text" />
+              
+              <div class="form-group">
+                <div class="input-wrapper">
+                  <span class="input-icon-left">
+                    <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M3 21h18"/><path d="M5 21V7l8-4v18"/><path d="M19 21V11l-6-4"/><path d="M9 9v.01"/><path d="M9 13v.01"/><path d="M9 17v.01"/></svg>
+                  </span>
+                  <input id="company" name="company" type="text" placeholder=" " />
+                  <label for="company">Company</label>
+                  <span class="validation-status-icon" aria-hidden="true"></span>
+                </div>
+                <span class="validation-message" id="company-validation" aria-live="polite"></span>
               </div>
             </div>
-            <label for="email">Email <span aria-hidden="true">*</span></label>
-            <input id="email" name="email" type="email" required />
-            <label for="message">Leave a few words <span aria-hidden="true">*</span></label>
-            <textarea id="message" name="message" rows="5" required></textarea>
-            <button class="button button-primary" type="submit">Submit</button>
+
+            <div class="form-group">
+              <div class="input-wrapper">
+                <span class="input-icon-left">
+                  <svg aria-hidden="true" viewBox="0 0 24 24"><path d="m22 7-8.99 5.72a2 2 0 0 1-2.02 0L2 7"/><rect width="20" height="16" x="2" y="4" rx="2"/></svg>
+                </span>
+                <input id="email" name="email" type="email" placeholder=" " required />
+                <label for="email">Email <span class="required-mark" aria-hidden="true">*</span></label>
+                <span class="validation-status-icon" aria-hidden="true"></span>
+              </div>
+              <span class="validation-message" id="email-validation" aria-live="polite"></span>
+            </div>
+
+            <div class="form-group">
+              <div class="input-wrapper textarea-wrapper">
+                <span class="input-icon-left">
+                  <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M21 15a4 4 0 0 1-4 4H7l-4 4V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"/></svg>
+                </span>
+                <textarea id="message" name="message" rows="4" placeholder=" " required></textarea>
+                <label for="message">Leave a few words <span class="required-mark" aria-hidden="true">*</span></label>
+                <span class="validation-status-icon" aria-hidden="true"></span>
+                <span class="char-counter" id="char-counter">0 / 1000</span>
+              </div>
+              <span class="validation-message" id="message-validation" aria-live="polite"></span>
+            </div>
+
+            <button class="button button-primary" id="form-submit-btn" type="submit" disabled>
+              <span class="btn-content">
+                <svg class="button-icon" id="submit-btn-icon" aria-hidden="true" viewBox="0 0 24 24">
+                  <path d="m22 2-7 20-4-9-9-4Z"/>
+                  <path d="M22 2 11 13"/>
+                </svg>
+                <span id="submit-btn-text">Send Message</span>
+              </span>
+              <span class="btn-loader">
+                <svg class="spinner" viewBox="0 0 50 50">
+                  <circle class="path" cx="25" cy="25" r="20" fill="none" stroke-width="5"></circle>
+                </svg>
+              </span>
+            </button>
             <p class="form-status" id="form-status" aria-live="polite"></p>
           </form>
+
+          <!-- Success Card -->
+          <div class="success-card" id="success-card" aria-hidden="true" style="display: none;">
+            <div class="success-icon-wrap">
+              <div class="success-checkmark">
+                <div class="check-icon">
+                  <span class="icon-line line-tip"></span>
+                  <span class="icon-line line-long"></span>
+                  <div class="icon-circle"></div>
+                  <div class="icon-fix"></div>
+                </div>
+              </div>
+            </div>
+            <h3>Message Prepared!</h3>
+            <p class="success-message">Thank you. Your message has been prepared. We are opening WhatsApp in a new window to send it.</p>
+            
+            <div class="success-summary">
+              <div class="summary-item">
+                <strong>Name:</strong> <span id="summary-name"></span>
+              </div>
+              <div class="summary-item">
+                <strong>Email:</strong> <span id="summary-email"></span>
+              </div>
+            </div>
+            
+            <div class="success-actions">
+              <button type="button" class="button button-secondary" id="copy-message-btn">
+                <svg class="button-icon" aria-hidden="true" viewBox="0 0 24 24">
+                  <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                  <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                </svg>
+                <span>Copy Message Text</span>
+              </button>
+              <button type="button" class="button button-primary" id="reset-form-btn">
+                Send Another Message
+              </button>
+            </div>
+            <p class="copy-feedback" id="copy-feedback" aria-live="polite"></p>
+          </div>
+
+          <!-- Direct Contact Badges -->
           <div class="connect-direct">
-            <a href="tel:+919894400663">+91-98944-00663</a>
-            <a href="mailto:arun.pswamy@gmail.com">arun.pswamy@gmail.com</a>
+            <div class="contact-badge" data-copy-value="+919894400663" data-tooltip="Click to Call / Copy">
+              <a href="tel:+919894400663" class="badge-link" aria-label="Call Arun Prasath at +91-98944-00663">
+                <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                <span>+91-98944-00663</span>
+              </a>
+              <button class="badge-copy-btn" aria-label="Copy phone number">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+              </button>
+            </div>
+            
+            <div class="contact-badge" data-copy-value="arun.pswamy@gmail.com" data-tooltip="Click to Email / Copy">
+              <a href="mailto:arun.pswamy@gmail.com" class="badge-link" aria-label="Email Arun Prasath at arun.pswamy@gmail.com">
+                <svg aria-hidden="true" viewBox="0 0 24 24"><path d="m22 7-8.99 5.72a2 2 0 0 1-2.02 0L2 7"/><rect width="20" height="16" x="2" y="4" rx="2"/></svg>
+                <span>arun.pswamy@gmail.com</span>
+              </a>
+              <button class="badge-copy-btn" aria-label="Copy email address">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+              </button>
+            </div>
           </div>
         </div>
       </div>
@@ -492,6 +605,14 @@
       <div id="modal-content"></div>
     </div>
   </div>
+
+  <a class="whatsapp-float" href="https://wa.me/919894400663?text=Hello%20Arun%20Prasath%2C%20I%20would%20like%20to%20discuss%20a%20business%20requirement." target="_blank" rel="noopener" aria-label="Chat with Arun Prasath on WhatsApp">
+    <span class="whatsapp-tooltip">Chat with Arun</span>
+    <svg aria-hidden="true" viewBox="0 0 24 24">
+      <path d="M20.5 11.8a8.5 8.5 0 0 1-12.6 7.4L3 20.5l1.3-4.7a8.5 8.5 0 1 1 16.2-4Z"/>
+      <path d="M8.8 7.9c.2-.5.4-.5.7-.5h.5c.2 0 .4 0 .6.4l.8 1.8c.1.2.1.4 0 .6l-.4.6c-.1.2-.2.3 0 .6.4.8 1 1.5 1.7 2 .7.5 1.3.7 1.6.8.2 0 .4 0 .5-.2l.8-1c.2-.2.4-.3.7-.2l1.8.8c.3.1.4.3.4.5 0 .5-.4 1.5-.9 1.8-.5.4-1.8.7-4.1-.3-3.5-1.4-5.7-4.9-5.9-5.1-.2-.3-1.4-1.9-1.4-3.2 0-1.2.6-1.8.9-2.1Z"/>
+    </svg>
+  </a>
 
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
   <script type="module" src="assets/js/main.js"></script>
