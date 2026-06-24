@@ -25,6 +25,8 @@
 .nav-links.open { padding: 1rem; }
 .nav-actions { display: none; }
 .hero-headline, .hero-copy h1 { font-size: clamp(3rem, 14vw, 4.4rem); }
+.hero-quotes { grid-template-columns: 1fr; }
+.hero-tag { width: 100%; }
 
 @media (min-width: 640px) {
   .container { padding: 0 1.75rem; }
@@ -59,10 +61,36 @@
   .language-grid { grid-template-columns: repeat(4, minmax(0,1fr)); }
 }
 
+
+@media (min-width: 900px) and (max-width: 1199px) {
+  .site-nav { gap: 1rem; }
+  .nav-links { gap: 0.8rem; }
+  .nav-links a { font-size: 0.68rem; letter-spacing: 0.07em; }
+  .nav-actions .button-primary { padding: 0.7rem 0.9rem; font-size: 0.68rem; }
+
+  .hero-section { grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr); }
+  .hero-visual { padding: 6rem 1.5rem 3rem 2rem; align-items: center; }
+  .hero-copy { padding-left: 2rem; padding-right: 2rem; }
+  .hero-copy h1 { max-width: 13ch; }
+  .hero-quotes { grid-template-columns: 1fr; margin-top: 1.5rem; }
+  .hero-quotes .hero-tag { min-height: 0; }
+
+  .stats-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .expertise-grid, .services-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .case-grid, .timeline-list { gap: 1rem; }
+  .case-content { padding: 1.35rem; min-height: 320px; }
+  .case-content h3, .case-card h3 { font-size: 1.18rem; }
+
+  .connect-shell { grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); min-height: 0; }
+  .connect-photo { min-height: 660px; }
+  .connect-panel { padding: 2.5rem; }
+  .connect-panel h2 { font-size: clamp(2.4rem, 4.4vw, 3.4rem); }
+}
 @media (min-width: 1200px) {
   .section, .impact-section { padding: var(--section-padding); }
   .hero-left, .hero-copy { padding-left: 4rem; padding-right: calc((100vw - 1200px) / 2 + 2rem); }
   .hero-visual { padding-left: calc((100vw - 1200px) / 2 + 2rem); padding-right: 0; }
+  .hero-quotes { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 
 @media (max-width: 899px) {

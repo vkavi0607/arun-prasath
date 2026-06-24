@@ -9,7 +9,6 @@ export function initForm() {
   const successCard = document.getElementById('success-card');
   const summaryName = document.getElementById('summary-name');
   const summaryEmail = document.getElementById('summary-email');
-  const copyMessageBtn = document.getElementById('copy-message-btn');
   const resetFormBtn = document.getElementById('reset-form-btn');
   
   if (!form || !panel || !progressBar || !submitBtn) return;
@@ -293,31 +292,8 @@ export function initForm() {
   }
 
   /* ==========================================
-   * 4. SUCCESS CARD FALLBACK & RESET
+   * 4. SUCCESS CARD RESET
    * ========================================== */
-  if (copyMessageBtn) {
-    copyMessageBtn.addEventListener('click', async () => {
-      const copyFeedback = document.getElementById('copy-feedback');
-      const btnText = copyMessageBtn.querySelector('span');
-      
-      try {
-        await navigator.clipboard.writeText(formulatedMessageText);
-        if (btnText) btnText.textContent = 'Copied!';
-        if (copyFeedback) copyFeedback.textContent = 'Message copied to clipboard.';
-        
-        setTimeout(() => {
-          if (btnText) btnText.textContent = 'Copy Message Text';
-          if (copyFeedback) copyFeedback.textContent = '';
-        }, 3000);
-      } catch (err) {
-        if (copyFeedback) {
-          copyFeedback.textContent = 'Failed to copy text. Please select and copy manually.';
-          copyFeedback.style.color = '#EF4444';
-        }
-      }
-    });
-  }
-
   if (resetFormBtn) {
     resetFormBtn.addEventListener('click', () => {
       // Hide success card

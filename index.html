@@ -23,6 +23,13 @@
   <link rel="stylesheet" href="assets/css/responsive.css" />
 </head>
 <body>
+  <div class="preloader" id="preloader" aria-hidden="true">
+    <div class="preloader-mark">
+      <svg viewBox="0 0 100 100" role="img" focusable="false">
+        <polygon points="50 8 86 29 86 71 50 92 14 71 14 29"></polygon>
+      </svg>
+    </div>
+  </div>
   <header class="site-header" id="top">
     <div class="site-nav container">
       <a href="#top" class="brand" aria-label="Arun Prasath P homepage">
@@ -52,7 +59,7 @@
       <div class="hero-grid container">
         <div class="hero-visual" data-aos="fade-right" data-aos-duration="1000">
           <div class="hero-frame">
-            <img src="assets/images/AP5.png" alt="Arun Prasath P — Industrial Advisor" class="hero-img" loading="eager" decoding="async" />
+            <img src="assets/images/AP2.png" alt="Arun Prasath P — Industrial Advisor" class="hero-img" loading="eager" decoding="async" />
           </div>
         </div>
         <div class="hero-copy" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="150">
@@ -63,10 +70,6 @@
           <div class="hero-buttons">
             <a class="button button-secondary" href="#expertise">Explore Expertise</a>
             <a class="button button-primary" href="#connect">Schedule a Discussion</a>
-          </div>
-          <div class="hero-quotes">
-            <div class="hero-tag">Strategic foresight for safer, more productive industrial assets.</div>
-            <div class="hero-tag">Market entry, partner alignment and execution discipline for premium growth.</div>
           </div>
         </div>
       </div>
@@ -101,7 +104,7 @@
         <div class="about-media" data-aos="fade-up">
           <div class="photo-card">
             <div class="photo-placeholder">
-              <img src="assets/images/AP1.png" alt="Arun Prasath P headshot" loading="lazy" decoding="async" />
+              <img src="assets/images/AP4.png" alt="Arun Prasath P headshot" loading="lazy" decoding="async" />
             </div>
           </div>
         </div>
@@ -332,9 +335,6 @@
         <p class="section-intro">Strategic wins and execution stories that demonstrate how industrial leadership, market entry and safety-focused delivery drive high-value outcomes.</p>
         <div class="case-grid">
           <article class="case-card" data-case="case1" role="button" tabindex="0" data-aos="fade-up" data-aos-duration="900">
-            <div class="case-img-wrap">
-              <img src="assets/images/AP2.png" alt="OMIS market expansion" class="case-thumb" loading="lazy" decoding="async" />
-            </div>
             <div class="case-content">
               <span class="case-label case-label-challenge">Market Entry</span>
               <h3>South India Market Expansion for OMIS</h3>
@@ -344,9 +344,6 @@
             </div>
           </article>
           <article class="case-card" data-case="case2" role="button" tabindex="0" data-aos="fade-up" data-aos-duration="900" data-aos-delay="100">
-            <div class="case-img-wrap">
-              <img src="assets/images/AP3.png" alt="IGCAR project" class="case-thumb" loading="lazy" decoding="async" />
-            </div>
             <div class="case-content">
               <span class="case-label case-label-action">Critical Delivery</span>
               <h3>High-Value Project Win for IGCAR, DAE Kalpakkam</h3>
@@ -356,9 +353,6 @@
             </div>
           </article>
           <article class="case-card" data-case="case3" role="button" tabindex="0" data-aos="fade-up" data-aos-duration="900" data-aos-delay="200">
-            <div class="case-img-wrap">
-              <img src="assets/images/AP4.png" alt="Capital Cranes partnership" class="case-thumb" loading="lazy" decoding="async" />
-            </div>
             <div class="case-content">
               <span class="case-label case-label-result">Partnership</span>
               <h3>Capital Cranes Strategic Partnership for South India</h3>
@@ -446,7 +440,7 @@
     <section class="section connect-section" id="connect">
       <div class="container connect-shell">
         <div class="connect-photo" data-aos="fade-up">
-          <img src="assets/images/AP4.png" alt="Arun Prasath P ready for a business conversation" loading="lazy" decoding="async" />
+          <img src="assets/images/AP1.png" alt="Arun Prasath P ready for a business conversation" loading="lazy" decoding="async" />
         </div>
         <div class="connect-panel" data-aos="fade-up" data-aos-delay="100">
           <div class="form-progress">
@@ -551,18 +545,10 @@
             </div>
             
             <div class="success-actions">
-              <button type="button" class="button button-secondary" id="copy-message-btn">
-                <svg class="button-icon" aria-hidden="true" viewBox="0 0 24 24">
-                  <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
-                  <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
-                </svg>
-                <span>Copy Message Text</span>
-              </button>
               <button type="button" class="button button-primary" id="reset-form-btn">
                 Send Another Message
               </button>
             </div>
-            <p class="copy-feedback" id="copy-feedback" aria-live="polite"></p>
           </div>
 
           <!-- Direct Contact Badges -->
@@ -605,14 +591,6 @@
       <div id="modal-content"></div>
     </div>
   </div>
-
-  <a class="whatsapp-float" href="https://wa.me/919894400663?text=Hello%20Arun%20Prasath%2C%20I%20would%20like%20to%20discuss%20a%20business%20requirement." target="_blank" rel="noopener" aria-label="Chat with Arun Prasath on WhatsApp">
-    <span class="whatsapp-tooltip">Chat with Arun</span>
-    <svg aria-hidden="true" viewBox="0 0 24 24">
-      <path d="M20.5 11.8a8.5 8.5 0 0 1-12.6 7.4L3 20.5l1.3-4.7a8.5 8.5 0 1 1 16.2-4Z"/>
-      <path d="M8.8 7.9c.2-.5.4-.5.7-.5h.5c.2 0 .4 0 .6.4l.8 1.8c.1.2.1.4 0 .6l-.4.6c-.1.2-.2.3 0 .6.4.8 1 1.5 1.7 2 .7.5 1.3.7 1.6.8.2 0 .4 0 .5-.2l.8-1c.2-.2.4-.3.7-.2l1.8.8c.3.1.4.3.4.5 0 .5-.4 1.5-.9 1.8-.5.4-1.8.7-4.1-.3-3.5-1.4-5.7-4.9-5.9-5.1-.2-.3-1.4-1.9-1.4-3.2 0-1.2.6-1.8.9-2.1Z"/>
-    </svg>
-  </a>
 
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
   <script type="module" src="assets/js/main.js"></script>

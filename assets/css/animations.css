@@ -1,4 +1,4 @@
-﻿@keyframes fadeSlideUp { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes fadeSlideUp { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: translateY(0); } }
 @keyframes fadeSlideRight { from { opacity: 0; transform: translateX(-24px); } to { opacity: 1; transform: translateX(0); } }
 @keyframes slideRight { from { opacity: 0; transform: translateX(-32px); } to { opacity: 1; transform: translateX(0); } }
 @keyframes slideUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
@@ -21,3 +21,54 @@
 .stat-card-v2.in-view::after, .stat-card.in-view::after { transform: scaleX(1); transition: transform 0.8s cubic-bezier(0.4,0,0.2,1) 0.2s; }
 .section-divider-line.animated { animation: drawLine 0.8s ease-out forwards; }
 .stat-num.counted, .stat-value.counted { animation: fadeSlideUp 0.4s ease-out; }
+
+.preloader {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: grid;
+  place-items: center;
+  background: #05070b;
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 520ms ease, visibility 520ms ease;
+}
+.preloader.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+.preloader-mark {
+  position: relative;
+  width: 76px;
+  height: 76px;
+  display: grid;
+  place-items: center;
+}
+.preloader-mark::before {
+  content: '';
+  position: absolute;
+  inset: 18px;
+  border-radius: 50%;
+  background: rgba(24, 214, 255, 0.12);
+  filter: blur(10px);
+  animation: hexCorePulse 1.8s ease-in-out infinite;
+}
+.preloader-mark svg {
+  position: relative;
+  width: 76px;
+  height: 76px;
+  fill: none;
+  stroke: #38d5ff;
+  stroke-width: 3;
+  stroke-linejoin: round;
+  filter: drop-shadow(0 0 8px rgba(56, 213, 255, 0.72)) drop-shadow(0 0 18px rgba(53, 124, 255, 0.35));
+  animation: hexRotate 2s linear infinite;
+}
+@keyframes hexRotate {
+  to { transform: rotate(360deg); }
+}
+@keyframes hexCorePulse {
+  0%, 100% { opacity: 0.35; transform: scale(0.82); }
+  50% { opacity: 0.85; transform: scale(1.12); }
+}

@@ -78,7 +78,7 @@ main > .section:nth-of-type(even),
 .dark-section,
 .connect-section {
   background: var(--color-ink);
-  color: var(--color-text-light);
+  color: var(--color-text-dark);
 }
 
 .dark-section h2,

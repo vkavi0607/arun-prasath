@@ -19,3 +19,11 @@ initTicker();
 initCounter();
 initCaseStudyModal();
 initForm();
+
+const preloader = document.getElementById('preloader');
+if (preloader) {
+  window.setTimeout(() => {
+    preloader.classList.add('is-hidden');
+    window.setTimeout(() => preloader.remove(), 600);
+  }, 2000);
+}
