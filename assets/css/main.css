@@ -1,24 +1,24 @@
 :root {
   /* ── Dark Foundations ── */
-  --color-ink: #000000;
-  --color-ink-mid: #141418;
-  --color-ink-soft: #1E1E24;
+  --color-ink: #060D1A; /* Very dark navy - footer */
+  --color-ink-mid: #0A1628; /* Deep Navy - odd sections */
+  --color-ink-soft: #172439;
 
   /* ── Primary Gold ── */
-  --color-accent: #D4AF37;
-  --color-accent-light: #E2C55A;
-  --color-accent-glow: rgba(212,175,55,0.18);
+  --color-accent: #B8922A;
+  --color-accent-light: #CBA741;
+  --color-accent-glow: rgba(184, 146, 42, 0.18);
 
   /* ── Accent Amber ── */
-  --color-gold: #C68A2B;
-  --color-gold-light: #D9A44A;
-  --color-gold-muted: rgba(198,138,43,0.14);
+  --color-gold: #B8922A;
+  --color-gold-light: #CBA741;
+  --color-gold-muted: rgba(184, 146, 42, 0.14);
 
   /* ── Light Surfaces ── */
-  --color-ivory: #F5F2EA;
-  --color-paper: #F8F8F5;
-  --color-slate-soft: #EDE9DF;
-  --color-white: #F8F8F5;
+  --color-ivory: #F5F3EF;
+  --color-paper: #F5F3EF;
+  --color-slate-soft: #EAE6DB;
+  --color-white: #FFFFFF;
 
   /* ── Text ── */
   --color-text-dark: #09090B;
@@ -76,7 +76,7 @@ body {
   min-height: 100vh;
   font-family: var(--font-body);
   color: var(--color-text-light);
-  background: var(--color-ink);
+  background: var(--color-ink-mid);
   overflow-x: hidden;
 }
 img, svg { max-width: 100%; display: block; }
@@ -93,15 +93,30 @@ button { border: 0; background: none; }
 .section,
 .impact-section {
   padding: var(--section-padding);
-  background: var(--color-ink);
+  background: var(--color-ink-mid);
   position: relative;
+  border-bottom: 1px solid rgba(184, 146, 42, 0.4); /* Gold divider */
 }
 
-main > .section:nth-of-type(even),
+main > .section:nth-of-type(even) {
+  background: var(--color-ivory);
+  color: var(--color-text-dark);
+}
+
+main > .section:nth-of-type(even) h2,
+main > .section:nth-of-type(even) h3,
+main > .section:nth-of-type(even) p {
+  color: var(--color-text-dark);
+}
+
+main > .section:nth-of-type(even) p {
+  color: #4A4A52; /* darker text for readable paragraph on light */
+}
+
 .dark-section,
 .connect-section {
-  background: var(--color-ink-mid);
-  color: var(--color-text-light);
+  background: var(--color-ink-mid) !important;
+  color: var(--color-text-light) !important;
 }
 
 .dark-section h2,
@@ -112,7 +127,17 @@ main > .section:nth-of-type(even),
 .connect-section p,
 .impact-section h2,
 .impact-section h3,
-.impact-section p { color: inherit; }
+.impact-section p { color: inherit !important; }
+
+/* Ensure dark sections always stay dark — override nth-of-type(even) */
+main > .section.dark-section {
+  background: var(--color-ink-mid) !important;
+  color: var(--color-text-light) !important;
+}
+main > .section.dark-section h2,
+main > .section.dark-section h3 { color: var(--color-white) !important; }
+main > .section.dark-section p { color: var(--color-text-dimmed) !important; }
+main > .section.dark-section .section-eyebrow { color: var(--color-accent) !important; }
 
 h1,h2,h3,h4,h5,h6 {
   margin: 0;

@@ -80,7 +80,7 @@
   padding-block: 2rem 3rem;
 }
 .hero-copy {
-  order: 1;
+  order: 2;
   width: 100%;
   align-items: flex-start;
   text-align: left;
@@ -144,7 +144,7 @@
 
 /* Hero Visual — mobile: below content, centered */
 .hero-visual {
-  order: 2;
+  order: 1;
   justify-content: center;
   margin-inline: auto;
   overflow: hidden;
@@ -223,7 +223,8 @@ h2 {
 /* Expertise / Services — 1 col on mobile */
 .expertise-grid,
 .expertise-grid.expertise-grid-alt,
-.services-grid {
+.services-grid,
+.services-list-grid {
   grid-template-columns: 1fr;
   gap: 1rem;
 }
@@ -364,7 +365,7 @@ h2 {
   .hero-stats { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1rem; }
 
   .expertise-grid.expertise-grid-alt { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.1rem; }
-  .services-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .services-grid, .services-list-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .case-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .client-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
   .stats-grid { grid-template-columns: repeat(3, 1fr); }
