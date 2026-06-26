@@ -24,22 +24,41 @@
 </head>
 <body>
   <div class="preloader" id="preloader" aria-hidden="true">
-    <div class="preloader-mark">
-      <svg viewBox="0 0 100 100" role="img" focusable="false">
-        <polygon points="50 8 86 29 86 71 50 92 14 71 14 29"></polygon>
-      </svg>
+    <div class="preloader-content">
+      <div class="preloader-mark">
+        <svg viewBox="0 0 100 100" role="img" focusable="false" class="preloader-ring-outer">
+          <polygon points="50 8 86 29 86 71 50 92 14 71 14 29"></polygon>
+        </svg>
+        <svg viewBox="0 0 100 100" role="img" focusable="false" class="preloader-ring-inner">
+          <polygon points="50 16 80 33 80 67 50 84 20 67 20 33"></polygon>
+        </svg>
+        <div class="preloader-text">AP</div>
+      </div>
+      <div class="preloader-brand">
+        <span class="preloader-name">ARUN PRASATH P</span>
+        <span class="preloader-sub">Industrial Growth Advisor</span>
+      </div>
     </div>
   </div>
   <header class="site-header" id="top">
     <div class="site-nav container">
       <a href="#top" class="brand" aria-label="Arun Prasath P homepage">
-        <span class="brand-name">ARUN PRASATH P</span>
-        <span class="brand-subtitle">Industrial Consultant</span>
+        <div class="header-logo-mark">
+          <svg viewBox="0 0 100 100" role="img" aria-hidden="true">
+            <polygon points="50 8 86 29 86 71 50 92 14 71 14 29"></polygon>
+          </svg>
+          <span>AP</span>
+        </div>
+        <div class="brand-text">
+          <span class="brand-name">ARUN PRASATH P</span>
+          <span class="brand-subtitle">Industrial Consultant</span>
+        </div>
       </a>
       <nav class="nav-links" id="nav-links" aria-label="Primary navigation">
         <a href="#about">About</a>
         <a href="#expertise">Expertise</a>
         <a href="#impact">Impact</a>
+        <a href="#timeline">Journey</a>
         <a href="#services">Services</a>
         <a href="#case-studies">Case Studies</a>
         <a href="#connect">Connect</a>
@@ -56,24 +75,50 @@
 
   <main>
     <section class="hero-section">
+      <div class="hero-glow hero-glow-1" aria-hidden="true"></div>
+      <div class="hero-glow hero-glow-2" aria-hidden="true"></div>
       <div class="hero-grid container">
-        <div class="hero-visual" data-aos="fade-right" data-aos-duration="1000">
-          <div class="hero-frame">
-            <img src="assets/images/AP2.png" alt="Arun Prasath P — Industrial Advisor" class="hero-img" loading="eager" decoding="async" />
-          </div>
-        </div>
-        <div class="hero-copy" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="150">
+        <div class="hero-copy" data-aos="fade-right" data-aos-duration="1000">
           <span class="eyebrow">Industrial Growth Advisory</span>
           <div class="hero-tag">Trusted advisor to CEOs, plant leaders and enterprise operations across India & GCC.</div>
-          <h1>Transforming material handling into measurable business impact.</h1>
+          <h1>Transforming material handling into <span style="color: var(--color-accent);">measurable business impact.</span></h1>
           <p class="hero-text">24+ years delivering market expansion, safety-first execution and $50M+ in B2B value for Tier‑1 manufacturers across India and GCC. I translate technical delivery into board-level outcomes — uptime, margin and market access.</p>
           <div class="hero-buttons">
             <a class="button button-secondary" href="#expertise">Explore Expertise</a>
             <a class="button button-primary" href="#connect">Schedule a Discussion</a>
           </div>
         </div>
+        <div class="hero-visual" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="150">
+          <div class="hero-img-wrapper">
+            <img src="assets/images/bg remove.png" alt="Arun Prasath P — Industrial Advisor" class="hero-img-full" loading="eager" decoding="async" />
+          </div>
+          <div class="hero-stats" aria-label="Key metrics">
+            <article class="hero-stat">
+              <span class="hero-stat-value">24+</span>
+              <span class="hero-stat-label">Years Industry Experience</span>
+            </article>
+            <article class="hero-stat">
+              <span class="hero-stat-value">$50M+</span>
+              <span class="hero-stat-label">B2B Revenue</span>
+            </article>
+            <article class="hero-stat">
+              <span class="hero-stat-value">150 MT</span>
+              <span class="hero-stat-label">Crane Projects</span>
+            </article>
+            <article class="hero-stat">
+              <span class="hero-stat-value">20+</span>
+              <span class="hero-stat-label">Industry Sectors</span>
+            </article>
+          </div>
+        </div>
       </div>
-      <div class="hero-background"></div>
+      <div class="hero-background" aria-hidden="true"></div>
+      <div class="scroll-indicator">
+        <span>Scroll to explore</span>
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor">
+          <path d="M12 5v10M12 17v2M6 15l6 6 6-6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
     </section>
 
     <section class="ticker-strip" aria-label="Key metrics">
@@ -95,30 +140,6 @@
           <span>India & GCC Markets</span>
           <span>Tier-1 Clients</span>
           <span>Safety-first execution</span>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="about">
-      <div class="container grid-two">
-        <div class="about-media" data-aos="fade-up">
-          <div class="photo-card">
-            <div class="photo-placeholder">
-              <img src="assets/images/AP4.png" alt="Arun Prasath P headshot" loading="lazy" decoding="async" />
-            </div>
-          </div>
-        </div>
-        <div class="about-copy" data-aos="fade-up" data-aos-delay="100">
-          <span class="section-eyebrow">Executive Introduction</span>
-          <h2>Industrial business leadership with operational depth and strategic clarity.</h2>
-          <p class="section-intro">A growth partner for CEOs and plant executives who need actionable strategy, execution confidence and high-stakes delivery in material handling and crane systems.</p>
-          <p>Arun combines 24+ years of factory-floor engineering and regional market leadership to convert technical decisions into measurable business outcomes. He has delivered $50M+ in B2B value, scoped and executed heavy‑lift projects to 150 MT capacity, and built repeatable go‑to‑market playbooks across India and the GCC. Today he partners with CEOs, plant heads and investors to reduce downtime, protect margin and scale operations through pragmatic, auditable delivery.</p>
-          <div class="identity-grid">
-            <div class="identity-card" data-aos="fade-up" data-aos-duration="800">Business Strategist</div>
-            <div class="identity-card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="50">Technical Expert</div>
-            <div class="identity-card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">Market Builder</div>
-            <div class="identity-card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="150">Trusted Advisor</div>
-          </div>
         </div>
       </div>
     </section>
@@ -156,46 +177,108 @@
       </div>
     </section>
 
+    <section class="section about-section" id="about">
+      <div class="container about-layout">
+        <div class="about-media" data-aos="fade-up">
+          <div class="about-photo-shell">
+            <div class="photo-card">
+              <div class="photo-placeholder">
+                <img src="assets/images/AP4.png" alt="Arun Prasath P headshot" loading="lazy" decoding="async" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="about-copy" data-aos="fade-up" data-aos-delay="100">
+          <span class="section-eyebrow">Executive Introduction</span>
+          <h2>Industrial business leadership with operational depth and strategic clarity.</h2>
+          <p class="section-intro">I partner with CEOs, plant heads and investors to turn heavy industry complexity into measurable uptime, margin and market access through practical advisory and disciplined execution.</p>
+          <div class="about-detail-copy">
+            <p>Arun combines deep operational experience with commercial focus to convert technical decisions into measurable business outcomes. He has scoped and delivered heavy-lift solutions to 150 MT capacity and built repeatable go-to-market playbooks across complex industrial environments.</p>
+            <p>He helps senior teams reduce downtime, protect margin and scale operations through pragmatic, auditable delivery.</p>
+          </div>
+          <div class="about-role-grid">
+            <article class="about-role-card">
+              <h3>Business Strategist</h3>
+            </article>
+            <article class="about-role-card">
+              <h3>Technical Expert</h3>
+            </article>
+            <article class="about-role-card">
+              <h3>Market Builder</h3>
+            </article>
+            <article class="about-role-card">
+              <h3>Trusted Advisor</h3>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="section" id="expertise">
       <div class="container">
         <span class="section-eyebrow">Industries I Understand Deeply</span>
         <h2>Industry expertise shaped by real projects across India and GCC.</h2>
-        <div class="expertise-grid">
+        <p class="section-intro">Across 24 years, I've built deep sector knowledge in energy, manufacturing, aerospace, and infrastructure. Each industry card below reflects hands-on delivery experience in hazardous, nuclear and high-precision environments — from project scoping to post-commissioning excellence.</p>
+        <div class="expertise-grid expertise-grid-alt">
           <article class="expertise-card" data-aos="fade-up">
-            <h3>Automotive</h3>
-            <p>Assembly lines, paint shops, heavy part handling.</p>
+            <div class="expertise-card-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6h12l-2 11H8L6 6z"/><path d="M8 6V4h8v2"/><path d="M9 15h6"/></svg></div>
+            <h3>Oil & Gas</h3>
+            <p>Hazardous area cranes, LNG terminals, and refinery handling solutions.</p>
           </article>
           <article class="expertise-card" data-aos="fade-up" data-aos-delay="50">
-            <h3>Steel</h3>
-            <p>Coil handling, ladle cranes, scrap yard operations.</p>
+            <div class="expertise-card-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v6"/><path d="M8 9h8"/><path d="M7 9l-3 9h16l-3-9"/><path d="M9 20v-5h6v5"/></svg></div>
+            <h3>Chemical Industry</h3>
+            <p>Plant safety, material flow, and corrosion-resistant handling systems.</p>
           </article>
           <article class="expertise-card" data-aos="fade-up" data-aos-delay="100">
-            <h3>Aerospace</h3>
-            <p>Precision lifting and clean room material flow.</p>
+            <div class="expertise-card-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v18"/><path d="M8 7h8"/><path d="M8 13h8"/><path d="M8 19h8"/></svg></div>
+            <h3>Power Sector</h3>
+            <p>Transformer bays, turbine halls, and high-voltage crane operations.</p>
           </article>
           <article class="expertise-card" data-aos="fade-up" data-aos-delay="150">
-            <h3>Oil & Gas</h3>
-            <p>Hazardous area cranes, LNG terminals, safety-first delivery.</p>
+            <div class="expertise-card-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 5h12v6H6z"/><path d="M6 11l-1 6h14l-1-6"/><path d="M9 11v-3"/><path d="M15 11v-3"/></svg></div>
+            <h3>Heavy Engineering</h3>
+            <p>Forging, press shops, fabrication yards and industrial project delivery.</p>
           </article>
           <article class="expertise-card" data-aos="fade-up" data-aos-delay="200">
-            <h3>Power</h3>
-            <p>Turbine halls, transformer bays, nuclear plant handling.</p>
+            <div class="expertise-card-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 16v-3a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v3"/><path d="M7 16v2"/><path d="M17 16v2"/><path d="M8 8h8"/></svg></div>
+            <h3>Automobile Industries</h3>
+            <p>Assembly line material handling, paint shop logistics and stamping operations.</p>
           </article>
           <article class="expertise-card" data-aos="fade-up" data-aos-delay="250">
-            <h3>Heavy Engineering</h3>
-            <p>Press shops, forging, fabrication yards, project execution.</p>
+            <div class="expertise-card-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 6h14"/><path d="M5 18h14"/><path d="M8 6v12"/><path d="M16 6v12"/></svg></div>
+            <h3>Textile & Foam</h3>
+            <p>Web handling, bulk material transport, and lightweight manufacturing flow.</p>
           </article>
           <article class="expertise-card" data-aos="fade-up" data-aos-delay="300">
-            <h3>Infrastructure</h3>
-            <p>Precast yards, ports, shipbuilding, airports.</p>
+            <div class="expertise-card-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v4"/><path d="M12 18v4"/><path d="M2 12h4"/><path d="M18 12h4"/><path d="M5 5l3 3"/><path d="M16 16l3 3"/><path d="M5 19l3-3"/><path d="M16 8l3-3"/></svg></div>
+            <h3>Space Research & Nuclear</h3>
+            <p>High-precision, compliance-driven material handling for defence and research.</p>
           </article>
           <article class="expertise-card" data-aos="fade-up" data-aos-delay="350">
-            <h3>Manufacturing</h3>
-            <p>General engineering, plastic, paper, solar, textiles.</p>
+            <div class="expertise-card-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16"/><path d="M4 18h16"/><path d="M8 6v12"/><path d="M16 6v12"/><path d="M12 10v4"/></svg></div>
+            <h3>Steel Industries</h3>
+            <p>Coil handling, ladle cranes, scrap processing and heavy mill logistics.</p>
           </article>
           <article class="expertise-card" data-aos="fade-up" data-aos-delay="400">
-            <h3>Defence & Space</h3>
-            <p>IGCAR-DAE, SHAR, Nuclear Fuel Complex, ISRO-ready delivery.</p>
+            <div class="expertise-card-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 7h14"/><path d="M5 12h14"/><path d="M5 17h14"/><path d="M8 4v4"/><path d="M16 4v4"/></svg></div>
+            <h3>Paper & Pulp</h3>
+            <p>Large-format lifting, reel handling and continuous process material flow.</p>
+          </article>
+          <article class="expertise-card" data-aos="fade-up" data-aos-delay="450">
+            <div class="expertise-card-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 8h10"/><path d="M7 16h10"/><path d="M12 4v16"/><path d="M5 11h14"/></svg></div>
+            <h3>Motors & Pumps</h3>
+            <p>Service-ready handling for rotating equipment, skid lifts and commissioning.</p>
+          </article>
+          <article class="expertise-card" data-aos="fade-up" data-aos-delay="500">
+            <div class="expertise-card-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 1v4"/><path d="M12 19v4"/><path d="M1 12h4"/><path d="M19 12h4"/><path d="M5 5l3 3"/><path d="M16 16l3 3"/></svg></div>
+            <h3>Department of Atomic Energy</h3>
+            <p>Compliance-sensitive execution for nuclear-grade cranes and support systems.</p>
+          </article>
+          <article class="expertise-card" data-aos="fade-up" data-aos-delay="550">
+            <div class="expertise-card-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2v20"/><path d="M4 12h16"/><path d="M9 4l6 8-6 8"/></svg></div>
+            <h3>Wind Sector</h3>
+            <p>Heavy lift planning and installation support for turbines and nacelle assemblies.</p>
           </article>
         </div>
       </div>
@@ -205,6 +288,7 @@
       <div class="container">
         <span class="section-eyebrow">Core Competencies</span>
         <h2>Capabilities aligned to boardroom priorities and plant-level outcomes.</h2>
+        <p class="section-intro">A focused view of the competencies that drive customer acquisition, technical delivery, and industrial growth for large-scale operations.</p>
         <div class="tabs-panel">
           <div class="tabs-list" role="tablist" aria-label="Core competencies">
             <button class="tab-button active" data-tab="business">Business Development</button>
@@ -215,7 +299,7 @@
             <button class="tab-button" data-tab="technical">Technical Expertise</button>
           </div>
           <div class="tab-content active" id="business">
-            <ul>
+            <ul class="competency-grid">
               <li>New market expansion planning for South India and GCC.</li>
               <li>Lead generation and conversion for industrial accounts.</li>
               <li>Strategic partnership development with OEMs and EPC contractors.</li>
@@ -223,7 +307,7 @@
             </ul>
           </div>
           <div class="tab-content" id="sales">
-            <ul>
+            <ul class="competency-grid">
               <li>Solution-based selling for high-value crane and material handling projects.</li>
               <li>Key account management for Tier-1 industrial clients.</li>
               <li>Techno-commercial negotiation to protect margin and close deals.</li>
@@ -231,7 +315,7 @@
             </ul>
           </div>
           <div class="tab-content" id="marketing">
-            <ul>
+            <ul class="competency-grid">
               <li>Industrial market outreach and premium positioning.</li>
               <li>Brand visibility for engineering-led service offerings.</li>
               <li>Competitive intelligence for focused segment targeting.</li>
@@ -239,7 +323,7 @@
             </ul>
           </div>
           <div class="tab-content" id="client">
-            <ul>
+            <ul class="competency-grid">
               <li>CRM-driven relationship planning and retention.</li>
               <li>Recurring revenue growth through post-sales excellence.</li>
               <li>Account expansion strategies with existing industrial clients.</li>
@@ -247,7 +331,7 @@
             </ul>
           </div>
           <div class="tab-content" id="project">
-            <ul>
+            <ul class="competency-grid">
               <li>End-to-end project coordination with safety at the center.</li>
               <li>Timeline management across installation and commissioning phases.</li>
               <li>Cross-functional team leadership across sales, service, and operations.</li>
@@ -255,7 +339,7 @@
             </ul>
           </div>
           <div class="tab-content" id="technical">
-            <ul>
+            <ul class="competency-grid">
               <li>EOT cranes, Goliath cranes, hoists, winches, and specialized lifting systems.</li>
               <li>Installation, commissioning, and maintenance up to 150 MT capacity.</li>
               <li>Quality and compliance in hazardous and nuclear-grade environments.</li>
@@ -369,69 +453,133 @@
       <div class="container">
         <span class="section-eyebrow">The 24-Year Journey</span>
         <h2>Career timeline rooted in technical depth and market leadership.</h2>
-        <div class="timeline-list">
-          <article class="timeline-item" data-aos="fade-up">
-            
-            <img class="timeline-logo" src="assets/images/logo/omis.png" alt="OMIS logo" loading="lazy" decoding="async" />
-            <span class="timeline-year">2022 – Present</span>
-            <h3>Business Development Manager — MM Engineers Pvt. Ltd. (OMIS), Coimbatore</h3>
-            <p>Leading South India market expansion, strategic partnerships, and revenue growth for OMIS crane brand.</p>
+        <p class="section-intro">A visual timeline of roles, projects and leadership milestones across 24 years of material handling and industrial consulting.</p>
+        <div class="timeline-wrapper">
+
+          <article class="timeline-item" data-pos="left" data-aos="fade-right">
+            <div class="timeline-marker" aria-hidden="true"></div>
+            <div class="timeline-card">
+              <div class="timeline-meta">
+                <img class="timeline-logo" src="assets/images/logo/omis.png" alt="OMIS logo" loading="lazy" decoding="async" />
+                <span class="timeline-date">2022 – Present</span>
+              </div>
+              <div class="timeline-details">
+                <h3>Business Development Manager — OMIS, India</h3>
+                <p>Leading South India market expansion, strategic partnerships, and revenue growth for OMIS crane brand.</p>
+              </div>
+            </div>
           </article>
-          <article class="timeline-item" data-aos="fade-up" data-aos-delay="50">
-            
-            <img class="timeline-logo" src="assets/images/logo/Cranes and hoists.jpg" alt="MM Engineers Stahl partner logo" loading="lazy" decoding="async" />
-            <span class="timeline-year">2018 – 2022</span>
-            <h3>Regional Manager — MM Engineers Pvt. Ltd. (Stahl Partner), Coimbatore</h3>
-            <p>Full P&amp;L ownership of Southern Region operations — Sales, Service, Project Execution, AMC, Crane Inspections.</p>
+
+          <article class="timeline-item" data-pos="right" data-aos="fade-left" data-aos-delay="50">
+            <div class="timeline-marker" aria-hidden="true"></div>
+            <div class="timeline-card">
+              <div class="timeline-meta">
+                <img class="timeline-logo" src="assets/images/logo/Cranes and hoists.jpg" alt="MM Engineers Stahl partner logo" loading="lazy" decoding="async" />
+                <span class="timeline-date">2018 – 2022</span>
+              </div>
+              <div class="timeline-details">
+                <h3>Regional Manager — MM Engineers Pvt. Ltd. (Stahl Partner), Coimbatore</h3>
+                <p>Full P&amp;L ownership of Southern Region operations — Sales, Service, Project Execution, AMC, Crane Inspections.</p>
+              </div>
+            </div>
           </article>
-          <article class="timeline-item" data-aos="fade-up" data-aos-delay="100">
-            
-            <img class="timeline-logo" src="assets/images/logo/k2.jpg" alt="Bradys logo" loading="lazy" decoding="async" />
-            <span class="timeline-year">2017 – 2018</span>
-            <h3>K2 CRANES & COMPONENTS PRIVATE LIMITED, CHENNAI</h3>
-            <p>Sales and  Service ,business development in the Southern region.</p>
+
+          <article class="timeline-item" data-pos="left" data-aos="fade-right" data-aos-delay="100">
+            <div class="timeline-marker" aria-hidden="true"></div>
+            <div class="timeline-card">
+              <div class="timeline-meta">
+                <img class="timeline-logo" src="assets/images/logo/k2.jpg" alt="K2 Cranes logo" loading="lazy" decoding="async" />
+                <span class="timeline-date">2017 – 2018</span>
+              </div>
+              <div class="timeline-details">
+                <h3>K2 CRANES &amp; COMPONENTS PRIVATE LIMITED, CHENNAI</h3>
+                <p>Sales and service business development in the Southern region.</p>
+              </div>
+            </div>
           </article>
-          <article class="timeline-item" data-aos="fade-up" data-aos-delay="150">
-            
-            <img class="timeline-logo" src="assets/images/logo/Bardys.jpg" alt="ElectroMech logo" loading="lazy" decoding="async" />
-            <span class="timeline-year">2015 – 2017</span>
-            <h3>Branch Manager — Bradys, Coimbatore</h3>
-            <p>Branch operations management, business development and customer relationship management.</p>
+
+          <article class="timeline-item" data-pos="right" data-aos="fade-left" data-aos-delay="150">
+            <div class="timeline-marker" aria-hidden="true"></div>
+            <div class="timeline-card">
+              <div class="timeline-meta">
+                <img class="timeline-logo" src="assets/images/logo/Bardys.jpg" alt="Bradys logo" loading="lazy" decoding="async" />
+                <span class="timeline-date">2015 – 2017</span>
+              </div>
+              <div class="timeline-details">
+                <h3>Branch Manager — Bradys, Coimbatore</h3>
+                <p>Branch operations management, business development and customer relationship management.</p>
+              </div>
+            </div>
           </article>
-          <article class="timeline-item" data-aos="fade-up" data-aos-delay="200">
-            
-            <img class="timeline-logo" src="assets/images/logo/ElectroMech.jpg" alt="ElectroMech logo" loading="lazy" decoding="async" />
-            <span class="timeline-year">2011 – 2014</span>
-            <h3>Assistant Manager — ElectroMech, UAE</h3>
-            <p>Maintenance operations in GCC region — international exposure to large-scale industrial maintenance.</p>
+
+          <article class="timeline-item" data-pos="left" data-aos="fade-right" data-aos-delay="200">
+            <div class="timeline-marker" aria-hidden="true"></div>
+            <div class="timeline-card">
+              <div class="timeline-meta">
+                <img class="timeline-logo" src="assets/images/logo/ElectroMech.jpg" alt="ElectroMech logo" loading="lazy" decoding="async" />
+                <span class="timeline-date">2011 – 2014</span>
+              </div>
+              <div class="timeline-details">
+                <h3>Assistant Manager — ElectroMech, UAE</h3>
+                <p>Maintenance operations in GCC region — international exposure to large-scale industrial maintenance.</p>
+              </div>
+            </div>
           </article>
-          <article class="timeline-item" data-aos="fade-up" data-aos-delay="250">
-            
-            <img class="timeline-logo" src="assets/images/logo/ElectroMech.jpg" alt="ElectroMech logo" loading="lazy" decoding="async" />
-            <span class="timeline-year">2008 – 2011</span>
-            <h3>Maintenance Manager — ElectroMech, UAE</h3>
-            <p>Managed complete crane maintenance operations for GCC client base; deepened international business acumen.</p>
+
+          <article class="timeline-item" data-pos="right" data-aos="fade-left" data-aos-delay="250">
+            <div class="timeline-marker" aria-hidden="true"></div>
+            <div class="timeline-card">
+              <div class="timeline-meta">
+                <img class="timeline-logo" src="assets/images/logo/ElectroMech.jpg" alt="ElectroMech logo" loading="lazy" decoding="async" />
+                <span class="timeline-date">2008 – 2011</span>
+              </div>
+              <div class="timeline-details">
+                <h3>Maintenance Manager — ElectroMech, UAE</h3>
+                <p>Managed complete crane maintenance operations for GCC client base; deepened international business acumen.</p>
+              </div>
+            </div>
           </article>
-          <article class="timeline-item" data-aos="fade-up" data-aos-delay="300">
-            
-            <img class="timeline-logo" src="assets/images/logo/grip.jpg" alt="GRIP Engineers logo" loading="lazy" decoding="async" />
-            <span class="timeline-year">2007 – 2008</span>
-            <h3>Junior Electrical Engineer — GRIP Engineers Pvt. Ltd., Secunderabad</h3>
-            <p>Erection, commissioning, service and troubleshooting of EOT cranes, Goliath cranes up to 80 MT.</p>
+
+          <article class="timeline-item" data-pos="left" data-aos="fade-right" data-aos-delay="300">
+            <div class="timeline-marker" aria-hidden="true"></div>
+            <div class="timeline-card">
+              <div class="timeline-meta">
+                <img class="timeline-logo" src="assets/images/logo/grip.jpg" alt="GRIP Engineers logo" loading="lazy" decoding="async" />
+                <span class="timeline-date">2007 – 2008</span>
+              </div>
+              <div class="timeline-details">
+                <h3>Junior Electrical Engineer — GRIP Engineers Pvt. Ltd., Secunderabad</h3>
+                <p>Erection, commissioning, service and troubleshooting of EOT cranes, Goliath cranes up to 80 MT.</p>
+              </div>
+            </div>
           </article>
-          <article class="timeline-item" data-aos="fade-up" data-aos-delay="350">
-            
-            <img class="timeline-logo" src="assets/images/logo/Cranes and hoists.jpg" alt="MM Engineers Stahl partner logo" loading="lazy" decoding="async" />
-            <span class="timeline-year">2003 – 2007</span>
-            <h3>Residential Engineer — MM Engineers Pvt. Ltd. (Stahl Partner), Coimbatore</h3>
-            <p>On-site commissioning and service of STAHL and NITCHI hoists and EOT cranes up to 50 MT.</p>
+
+          <article class="timeline-item" data-pos="right" data-aos="fade-left" data-aos-delay="350">
+            <div class="timeline-marker" aria-hidden="true"></div>
+            <div class="timeline-card">
+              <div class="timeline-meta">
+                <img class="timeline-logo" src="assets/images/logo/Cranes and hoists.jpg" alt="MM Engineers Stahl partner logo" loading="lazy" decoding="async" />
+                <span class="timeline-date">2003 – 2007</span>
+              </div>
+              <div class="timeline-details">
+                <h3>Residential Engineer — MM Engineers Pvt. Ltd. (Stahl Partner), Coimbatore</h3>
+                <p>On-site commissioning and service of STAHL and NITCHI hoists and EOT cranes up to 50 MT.</p>
+              </div>
+            </div>
           </article>
-          <article class="timeline-item" data-aos="fade-up" data-aos-delay="400">
-            
-            <img class="timeline-logo" src="assets/images/logo/recon.jpg" alt="Recon Elektrik Services logo" loading="lazy" decoding="async" />
-            <span class="timeline-year">2002 – 2003</span>
-            <h3>Service Engineer — Recon Elektrik Services, Madurai</h3>
-            <p>Foundation years — electrical motor testing, rewinding, and commissioning; built technical fundamentals.</p>
+
+          <article class="timeline-item" data-pos="left" data-aos="fade-right" data-aos-delay="400">
+            <div class="timeline-marker" aria-hidden="true"></div>
+            <div class="timeline-card">
+              <div class="timeline-meta">
+                <img class="timeline-logo" src="assets/images/logo/recon.jpg" alt="Recon Elektrik Services logo" loading="lazy" decoding="async" />
+                <span class="timeline-date">2002 – 2003</span>
+              </div>
+              <div class="timeline-details">
+                <h3>Service Engineer — Recon Elektrik Services, Madurai</h3>
+                <p>Foundation years — electrical motor testing, rewinding, and commissioning; built technical fundamentals.</p>
+              </div>
+            </div>
           </article>
         </div>
       </div>
@@ -580,8 +728,60 @@
 
   <footer class="site-footer">
     <div class="container footer-grid">
-      <p>© 2026 Arun Prasath P. Industrial Business Consultant & Strategic Advisor.</p>
-      <p>No. 429, Rajeshwari Nagar, Poonamallee, Chennai – 600056, Tamil Nadu, India</p>
+      <div class="footer-brand">
+        <div class="footer-logo-area">
+          <div class="footer-logo-mark">
+            <svg viewBox="0 0 100 100" role="img" aria-hidden="true">
+              <polygon points="50 8 86 29 86 71 50 92 14 71 14 29"></polygon>
+            </svg>
+            <span>AP</span>
+          </div>
+          <div class="brand">
+            <span class="brand-name">Arun Prasath P</span>
+            <span class="brand-subtitle">Industrial Advisor</span>
+          </div>
+        </div>
+        <p class="footer-desc">Helping B2B industrial enterprises optimize material handling capabilities, minimize operational downtime, and deploy technical delivery safely across India & GCC markets.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul class="footer-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#expertise">Expertise</a></li>
+          <li><a href="#journey">Journey</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#case-studies">Case Studies</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Connect</h4>
+        <ul class="footer-contact-list">
+          <li>
+            <a href="tel:+919894400663" aria-label="Call +91-98944-00663">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="footer-icon"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              <span>+91 98944 00663</span>
+            </a>
+          </li>
+          <li>
+            <a href="mailto:arun.pswamy@gmail.com" aria-label="Email arun.pswamy@gmail.com">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="footer-icon"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              <span>arun.pswamy@gmail.com</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.linkedin.com/in/arun-prasath-p-pap-3214b1165/" target="_blank" rel="noopener" aria-label="LinkedIn Profile">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="footer-icon"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+              <span>LinkedIn Profile</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>© 2026 Arun Prasath P. All Rights Reserved.</p>
+      <div class="footer-meta-links">
+        <span>Corporate B2B Growth Advisor</span>
+      </div>
     </div>
   </footer>
 

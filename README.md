@@ -167,36 +167,19 @@ arun-prasath-portfolio/
 │   │   ├── nav.js                  # Sticky nav, hamburger menu, scroll-spy
 │   │   ├── ticker.js               # GSAP marquee (credential strip)
 │   │   ├── counter.js              # Stats number count-up on scroll
-│   │   ├── timeline.js             # Journey section alternating reveal
 │   │   ├── tabs.js                 # Competencies tab + accordion logic
 │   │   ├── casestudy.js            # Case study modal open / close / trap focus
 │   │   └── form.js                 # Contact form validation + Formspree POST
 │   │
 │   └── images/
-│       ├── profile/
-│       │   └── arun-prasath.jpg    # ⚠️ To be provided by client
-│       ├── og/
-│       │   └── og-image.jpg        # 1200×630px — LinkedIn / social share preview
-│       ├── icons/
-│       │   ├── favicon.ico
-│       │   ├── favicon-32.png
-│       │   └── apple-touch-icon.png
-│       └── blog/
-│           ├── blog-thumb-1.jpg    # Blog article thumbnails (placeholder)
-│           ├── blog-thumb-2.jpg
-│           └── blog-thumb-3.jpg
-│
-├── blog/
-│   ├── index.html                  # Blog listing page
-│   └── posts/
-│       ├── material-handling-productivity.html
-│       ├── solution-selling-vs-product-selling.html
-│       └── hidden-cost-of-downtime.html
+│       ├── logo/                   # Client logos & brand assets
+│       ├── AP1.png                 # Profile images & assets
+│       ├── AP4.png
+│       ├── AP5.png
+│       └── bg remove.png           # Hero transparent background profile
 │
 ├── .gitignore
-├── netlify.toml                    # Netlify deploy config
-├── README.md                       # This file
-└── PROJECT_BRIEF.md                # Full design & content brief
+└── README.md                       # This file
 ```
 
 ---
@@ -283,7 +266,6 @@ All CSS custom properties are defined in `main.css` under `:root`. Every other f
 | `nav.js` | Sticky header on scroll, hamburger toggle, active section highlighting | `initNav()`, `initScrollSpy()` |
 | `ticker.js` | GSAP infinite horizontal marquee for credential strip | `initTicker()` |
 | `counter.js` | Animates stat numbers from 0 → value when section enters viewport | `initCounters()` |
-| `timeline.js` | Alternating left/right reveal for career journey | `initTimeline()` |
 | `tabs.js` | Tab switcher for competencies + mobile accordion fallback | `initTabs()` |
 | `casestudy.js` | Opens case study modal, traps focus, closes on ESC / backdrop | `initCaseStudies()` |
 | `form.js` | Validates contact form fields, POSTs to Formspree, shows success/error state | `initForm()` |
@@ -292,31 +274,27 @@ All CSS custom properties are defined in `main.css` under `:root`. Every other f
 
 ```javascript
 // main.js
-import { initNav }         from './nav.js';
-import { initTicker }      from './ticker.js';
-import { initCounters }    from './counter.js';
-import { initTimeline }    from './timeline.js';
-import { initTabs }        from './tabs.js';
-import { initCaseStudies } from './casestudy.js';
-import { initForm }        from './form.js';
+import { initNav } from './nav.js';
+import { initTabs } from './tabs.js';
+import { initTicker } from './ticker.js';
+import { initCounter } from './counter.js';
+import { initCaseStudyModal } from './casestudy.js';
+import { initForm } from './form.js';
 
-document.addEventListener('DOMContentLoaded', () => {
-  initNav();
-  initTicker();
-  initCounters();
-  initTimeline();
-  initTabs();
-  initCaseStudies();
-  initForm();
-
-  // Global AOS init
-  AOS.init({
-    duration: 700,
-    once: true,
-    offset: 80,
-    easing: 'ease-out-cubic'
-  });
+AOS.init({
+  duration: 800,
+  once: true,
+  easing: 'ease-out-quart',
+  offset: 60,
+  delay: 0,
 });
+
+initNav();
+initTabs();
+initTicker();
+initCounter();
+initCaseStudyModal();
+initForm();
 ```
 
 ---
@@ -346,14 +324,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
 ## Content Source
 
-All copy, case studies, client lists, service descriptions, and bio text are in:
+All copy, case studies, client lists, service descriptions, and bio text are located directly inside:
 
 ```
-PROJECT_BRIEF.md              ← Design direction & section specs
-Arun_Prasath_Portfolio_Content.docx  ← Full final copy for every section
+index.html              ← Production ready copy embedded directly.
 ```
 
-**Rule:** Never write placeholder lorem ipsum. Use real content from the Word document from day one.
+**Rule:** Ensure all edits are made directly to the `index.html` file using real content.
 
 ---
 
@@ -686,6 +663,6 @@ Arun Prasath P
 
 ---
 
-*README last updated: June 2026*
-*Brief version: v1.0*
-*Project status: In Development*
+*README last updated: June 26, 2026*
+*Brief version: v1.1*
+*Project status: Final Polish*
