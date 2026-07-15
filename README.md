@@ -173,10 +173,10 @@ arun-prasath-portfolio/
 │   │
 │   └── images/
 │       ├── logo/                   # Client logos & brand assets
-│       ├── AP1.png                 # Profile images & assets
-│       ├── AP4.png
+│       ├── ap-discussion.png       # Profile images & assets
+│       ├── ap-headshot.png
 │       ├── AP5.png
-│       └── bg remove.png           # Hero transparent background profile
+│       └── arun-prasath-hero.png   # Hero transparent background profile
 │
 ├── .gitignore
 └── README.md                       # This file
@@ -669,6 +669,22 @@ The portfolio has undergone a final round of pixel-perfect visual polish and red
    - Reduced logo size to `12px` and set a vertical offset (`margin-top: -1px`) for pixel-perfect baseline text alignment.
 5. **Animation Fix**:
    - Extended `counter.js` to observe all stats cards, including text-based cards (like "India & GCC"), so they play the slide-up keyframe animation upon scroll.
+6. **Fixed Header & Gap Fix**:
+   - Changed `.site-header` positioning from `sticky` to `fixed` with top padding offsets on the hero grid to ensure the navbar remains visible on all sections when scrolling and to eliminate the vertical layout gap.
+7. **Testimonials Update**:
+   - Commented out/hid the entire section in HTML until real client quotes are finalized, and stripped placeholder suffix labels (`[PLACEHOLDER]`) from the code.
+8. **Legal Permission Flags**:
+   - Added a code comment warning above the Trusted By section to verify client permissions for Volvo, Hyundai, IndianOil, and others.
+9. **Assets & Filenames Cleanup**:
+   - Renamed raw image filenames (`bg remove.png`, `AP4.png`, `AP1.png`, etc.) to descriptive kebab-case and updated paths site-wide.
+10. **Accessibility & Skip Link**:
+    - Added a visually hidden skip link targeting `#main-content` for keyboard/screen-reader users.
+11. **Contact Method Toggle**:
+    - Integrated a styled submission toggle between WhatsApp and Email, with automatic submit button label changes and routing logic.
+12. **Privacy Protection Note**:
+    - Added a concise, one-line privacy text on the form.
+13. **Footer Links Alignment**:
+    - Aligned the footer links to match the top navbar items (`About`, `Industries`, `Services`, `Results`, `Contact`), adding `Journey` at the end as an extra navigation link.
 
 ---
 
@@ -684,5 +700,6 @@ Arun Prasath P
 ---
 
 *README last updated: July 15, 2026*
-*Brief version: v1.2*
+*Brief version: v1.3*
 *Project status: Production Ready*
+

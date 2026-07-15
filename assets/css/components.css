@@ -1817,3 +1817,83 @@ main > .section:nth-of-type(even) .competency-grid li { color: var(--color-ink-s
   white-space: nowrap !important;
 }
 
+/* Visually-hidden skip-link for keyboard accessibility */
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 1.5rem;
+  background: var(--color-accent);
+  color: var(--color-dark);
+  padding: 0.75rem 1.5rem;
+  font-family: var(--font-label), sans-serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  border-radius: var(--radius-sm);
+  z-index: 9999;
+  transition: top var(--transition-fast) cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+.skip-link:focus {
+  top: 1.5rem;
+  outline: 2px solid var(--color-white);
+}
+
+/* Privacy Note */
+.form-privacy-note {
+  font-family: var(--font-body), sans-serif;
+  font-size: 0.76rem;
+  color: var(--color-text-dimmed);
+  margin-top: 1.25rem;
+  margin-bottom: 1rem;
+  line-height: 1.4;
+  opacity: 0.85;
+}
+
+/* Submission Method Toggle */
+.method-toggle-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1.75rem;
+}
+.method-toggle-container .toggle-label {
+  font-family: var(--font-label), sans-serif;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-text-dimmed);
+}
+.method-toggle-group {
+  display: inline-flex;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-sm);
+  padding: 3px;
+  width: fit-content;
+}
+.method-toggle-btn {
+  font-family: var(--font-label), sans-serif;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--color-text-soft);
+  padding: 0.45rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  transition: all var(--transition-fast) ease;
+}
+.method-toggle-btn.active {
+  background: var(--color-accent);
+  color: var(--color-dark);
+}
+.method-toggle-btn:not(.active):hover {
+  color: var(--color-white);
+  background: rgba(255, 255, 255, 0.05);
+}
+

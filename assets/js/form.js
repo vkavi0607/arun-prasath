@@ -211,7 +211,32 @@ export function initForm() {
   });
 
   /* ==========================================
-   * 3. SUBMISSION FLOW (WHATSAPP INQUIRY)
+   * METHOD TOGGLE LOGIC (WhatsApp vs Email)
+   * ========================================== */
+  const toggleWhatsapp = document.getElementById('toggle-whatsapp');
+  const toggleEmail = document.getElementById('toggle-email');
+  const submitBtnText = document.getElementById('submit-btn-text');
+
+  let currentMethod = 'whatsapp'; // Default
+
+  if (toggleWhatsapp && toggleEmail && submitBtnText) {
+    toggleWhatsapp.addEventListener('click', () => {
+      toggleWhatsapp.classList.add('active');
+      toggleEmail.classList.remove('active');
+      currentMethod = 'whatsapp';
+      submitBtnText.textContent = 'Send via WhatsApp';
+    });
+
+    toggleEmail.addEventListener('click', () => {
+      toggleEmail.classList.add('active');
+      toggleWhatsapp.classList.remove('active');
+      currentMethod = 'email';
+      submitBtnText.textContent = 'Send via Email';
+    });
+  }
+
+  /* ==========================================
+   * 3. SUBMISSION FLOW (WHATSAPP/EMAIL INQUIRY)
    * ========================================== */
   let formulatedMessageText = '';
 
@@ -241,7 +266,7 @@ export function initForm() {
     // Set button to loading state
     submitBtn.classList.add('is-loading');
     submitBtn.disabled = true;
-    formStatus.textContent = 'Preparing WhatsApp message...';
+    formStatus.textContent = currentMethod === 'whatsapp' ? 'Preparing WhatsApp message...' : 'Preparing Email client...';
     formStatus.style.color = 'var(--color-text-soft)';
 
     const name = formFields.name.input.value.trim();
@@ -265,9 +290,15 @@ export function initForm() {
 
     // Simulate connection delay for premium micro-experience (800ms)
     setTimeout(() => {
-      const phone = form.dataset.whatsappPhone || '919894400663';
-      const url = `https://wa.me/${phone}?text=${encodeURIComponent(formulatedMessageText)}`;
-      window.open(url, '_blank');
+      if (currentMethod === 'whatsapp') {
+        const phone = form.dataset.whatsappPhone || '919894400663';
+        const url = `https://wa.me/${phone}?text=${encodeURIComponent(formulatedMessageText)}`;
+        window.open(url, '_blank');
+      } else {
+        const subject = 'Business Inquiry from Portfolio';
+        const url = `mailto:arun.pswamy@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(formulatedMessageText)}`;
+        window.location.href = url;
+      }
 
       // Transition to Success Card
       showSuccessCard(name, email);
@@ -316,6 +347,14 @@ export function initForm() {
         field.group.classList.remove('is-valid', 'is-invalid');
         field.validationMsg.textContent = '';
       });
+
+      // Reset submission method
+      if (toggleWhatsapp && toggleEmail && submitBtnText) {
+        toggleWhatsapp.classList.add('active');
+        toggleEmail.classList.remove('active');
+        currentMethod = 'whatsapp';
+        submitBtnText.textContent = 'Send via WhatsApp';
+      }
 
       // Reset textarea height and counters
       adjustTextareaHeight();
