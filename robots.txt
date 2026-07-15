@@ -1,0 +1,5 @@
+# Robots.txt for arunprasath.in
+User-agent: *
+Allow: /
+
+Sitemap: https://arunprasath.in/sitemap.xml

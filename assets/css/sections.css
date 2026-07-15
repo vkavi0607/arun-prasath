@@ -117,3 +117,422 @@
 .testimonial-card p { font-style: italic; color: var(--color-text-dimmed); }
 .testimonial-meta { border-top: 1px solid var(--color-border-dark); padding-top: 1.25rem; }
 .form-status { min-height: 1.5rem; font-size: 0.95rem; color: var(--color-gold-light); }
+
+/* ── Framework (How I Think) ── */
+#framework {
+  background: var(--color-ink-mid) !important;
+  color: var(--color-text-light) !important;
+}
+#framework h2 {
+  color: var(--color-white) !important;
+}
+.framework-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1.25rem;
+  margin-top: 3rem;
+}
+.framework-card {
+  background: rgba(255, 255, 255, 0.03) !important;
+  backdrop-filter: blur(12px) saturate(180%);
+  -webkit-backdrop-filter: blur(12px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  border-radius: var(--radius-md);
+  padding: 2.25rem 1.75rem;
+  position: relative;
+  transition: all var(--transition-base);
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  height: 100%;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.25);
+}
+.framework-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(184, 146, 42, 0.35) !important;
+  background: rgba(184, 146, 42, 0.06) !important;
+  box-shadow: 0 8px 32px 0 rgba(184, 146, 42, 0.15);
+}
+.framework-number {
+  font-family: var(--font-label);
+  font-size: 2.75rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-gold) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1;
+}
+.framework-card p {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--color-text-dimmed);
+  font-weight: 500;
+}
+
+/* ── Business Philosophy (What I Believe) ── */
+#philosophy {
+  background: var(--color-ink);
+}
+.philosophy-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 760px;
+  margin: 3rem auto 0;
+}
+.philosophy-item {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1.25rem 2rem;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(12px) saturate(180%);
+  -webkit-backdrop-filter: blur(12px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-left: 3px solid var(--color-accent);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  transition: all var(--transition-fast);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
+}
+.philosophy-item:hover {
+  transform: translateX(6px);
+  background: rgba(184, 146, 42, 0.06);
+  border-color: rgba(184, 146, 42, 0.25);
+  border-left-color: var(--color-accent-light);
+  box-shadow: 0 8px 32px 0 rgba(184, 146, 42, 0.1);
+}
+.philosophy-bullet {
+  font-family: var(--font-label);
+  color: var(--color-accent);
+  font-weight: 700;
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  flex-shrink: 0;
+}
+.philosophy-text {
+  font-size: 1.05rem;
+  color: var(--color-text-light);
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+/* ── Thought Leadership (insights) ── */
+#insights {
+  background: var(--color-ink-mid);
+}
+.insights-grid-custom {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+.insight-card-custom {
+  background: rgba(255, 255, 255, 0.03) !important;
+  backdrop-filter: blur(12px) saturate(180%);
+  -webkit-backdrop-filter: blur(12px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.06) !important;
+  border-radius: var(--radius-md);
+  padding: 2.25rem;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  transition: all var(--transition-base);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.25);
+}
+.insight-card-custom:hover {
+  transform: translateY(-5px);
+  border-color: rgba(184, 146, 42, 0.35) !important;
+  background: rgba(184, 146, 42, 0.06) !important;
+  box-shadow: 0 8px 32px 0 rgba(184, 146, 42, 0.15);
+}
+.insight-tag {
+  font-family: var(--font-label);
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--color-accent);
+  margin-bottom: 1.25rem;
+  display: inline-block;
+}
+.insight-card-custom h3 {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  color: var(--color-white);
+  margin: 0 0 0.85rem 0;
+  line-height: 1.35;
+}
+.insight-card-custom p {
+  color: var(--color-text-dimmed);
+  font-size: 0.92rem;
+  line-height: 1.65;
+  margin: 0 0 1.75rem 0;
+  flex-grow: 1;
+}
+.insight-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-label);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin-top: auto;
+  transition: gap var(--transition-fast), color var(--transition-fast);
+}
+.insight-link svg {
+  width: 14px;
+  height: 14px;
+  stroke: currentColor;
+  stroke-width: 2.5;
+  transition: transform var(--transition-fast);
+  flex-shrink: 0;
+}
+.insight-card-custom:hover .insight-link {
+  gap: 12px;
+  color: var(--color-accent-light);
+}
+.insight-card-custom:hover .insight-link svg {
+  transform: translateX(4px);
+}
+
+/* ── Testimonials ── */
+#testimonials {
+  background: var(--color-ink) !important;
+  color: var(--color-text-light) !important;
+}
+#testimonials h2 {
+  color: var(--color-white) !important;
+}
+/* ── Carousel Slider ── */
+.carousel-container {
+  position: relative;
+  max-width: 800px;
+  margin: 3.5rem auto 0;
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+}
+.carousel-track {
+  display: flex;
+  transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+  will-change: transform;
+}
+.testimonial-card-custom.slide {
+  flex: 0 0 100%;
+  width: 100%;
+  box-sizing: border-box;
+}
+.testimonial-card-custom {
+  background: rgba(255, 255, 255, 0.03) !important;
+  backdrop-filter: blur(12px) saturate(180%);
+  -webkit-backdrop-filter: blur(12px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  border-radius: var(--radius-lg);
+  padding: 2.75rem 2.25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1.75rem;
+  transition: all var(--transition-base);
+  position: relative;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+}
+.testimonial-card-custom::before {
+  content: "“";
+  position: absolute;
+  top: 1rem;
+  left: 1.5rem;
+  font-family: var(--font-display);
+  font-size: 5rem;
+  color: rgba(184, 146, 42, 0.15);
+  line-height: 1;
+  pointer-events: none;
+}
+.testimonial-card-custom:hover {
+  transform: translateY(-5px);
+  background: rgba(184, 146, 42, 0.06) !important;
+  border-color: rgba(184, 146, 42, 0.35) !important;
+  box-shadow: 0 8px 32px 0 rgba(184, 146, 42, 0.15);
+}
+.testimonial-quote {
+  font-style: italic;
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: var(--color-text-light);
+  margin: 0;
+  position: relative;
+  z-index: 1;
+}
+.testimonial-author {
+  font-family: var(--font-label);
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  color: var(--color-accent);
+  text-transform: uppercase;
+  font-weight: 700;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding-top: 1.25rem;
+  margin: 0;
+}
+
+/* ── Industries Served (expertise) ── */
+#expertise {
+  background: var(--color-ink) !important;
+}
+#expertise h2 {
+  color: var(--color-white) !important;
+}
+.expertise-grid-alt .expertise-card {
+  background: rgba(255, 255, 255, 0.03) !important;
+  backdrop-filter: blur(12px) saturate(180%);
+  -webkit-backdrop-filter: blur(12px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  border-radius: var(--radius-md) !important;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.25) !important;
+  transition: all var(--transition-base) !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+.expertise-grid-alt .expertise-card:hover {
+  border-color: rgba(184, 146, 42, 0.35) !important;
+  background: rgba(184, 146, 42, 0.06) !important;
+  box-shadow: 0 8px 32px 0 rgba(184, 146, 42, 0.15) !important;
+  transform: translateY(-5px) !important;
+}
+.expertise-grid-alt .expertise-card h3 {
+  color: var(--color-white) !important;
+}
+.expertise-grid-alt .expertise-card p {
+  color: var(--color-text-dimmed) !important;
+}
+
+/* ── Timeline Accordion Reveal ── */
+#timeline {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  border-top: 0px solid transparent !important;
+  border-bottom: 0px solid transparent !important;
+  transition: max-height 0.8s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.8s ease-in-out, padding 0.8s ease-in-out;
+}
+#timeline.expanded {
+  max-height: 4000px;
+  opacity: 1;
+  padding-top: 6rem !important;
+  padding-bottom: 6rem !important;
+}
+
+/* ── Carousel Slider Controls ── */
+.carousel-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 2.5rem;
+}
+.carousel-btn {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--color-accent);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+.carousel-btn:hover {
+  background: var(--color-accent);
+  color: var(--color-ink);
+  transform: scale(1.08);
+}
+.carousel-btn svg {
+  width: 18px;
+  height: 18px;
+  stroke: currentColor;
+}
+.carousel-dots {
+  display: flex;
+  gap: 0.75rem;
+}
+.dot-btn {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+.dot-btn.active {
+  background: var(--color-accent);
+  transform: scale(1.2);
+}
+
+/* ── Trusted By (clients) ── */
+#clients {
+  background: var(--color-ink) !important;
+}
+#clients h2 {
+  color: var(--color-white) !important;
+}
+.client-grid > div {
+  background: rgba(255, 255, 255, 0.03) !important;
+  backdrop-filter: blur(12px) saturate(180%);
+  -webkit-backdrop-filter: blur(12px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  border-radius: var(--radius-md) !important;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.25) !important;
+  transition: all var(--transition-base) !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+.client-grid > div:hover {
+  border-color: rgba(184, 146, 42, 0.35) !important;
+  background: rgba(184, 146, 42, 0.06) !important;
+  box-shadow: 0 8px 32px 0 rgba(184, 146, 42, 0.15) !important;
+  transform: translateY(-5px) !important;
+}
+.client-grid > div h3 {
+  color: var(--color-white) !important;
+}
+.client-grid > div p {
+  color: var(--color-text-dimmed) !important;
+}
+
+/* ── Dark Timeline Cards Styling ── */
+.timeline-section.dark-section {
+  background: var(--color-ink) !important;
+}
+.timeline-section.dark-section h2 {
+  color: var(--color-white) !important;
+}
+.timeline-section.dark-section .timeline-card {
+  background: rgba(255, 255, 255, 0.03) !important;
+  backdrop-filter: blur(12px) saturate(180%);
+  -webkit-backdrop-filter: blur(12px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.25) !important;
+  transition: all var(--transition-base) !important;
+}
+.timeline-section.dark-section .timeline-card h3 {
+  color: var(--color-white) !important;
+}
+.timeline-section.dark-section .timeline-card p {
+  color: var(--color-text-dimmed) !important;
+}
+.timeline-section.dark-section .timeline-card:hover {
+  border-color: rgba(184, 146, 42, 0.35) !important;
+  background: rgba(184, 146, 42, 0.06) !important;
+  box-shadow: 0 8px 32px 0 rgba(184, 146, 42, 0.15) !important;
+}
+
+
+

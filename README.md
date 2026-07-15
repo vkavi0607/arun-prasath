@@ -652,6 +652,26 @@ chore:    tooling, config, README changes
 
 ---
 
+## Recent Updates (July 2026)
+
+The portfolio has undergone a final round of pixel-perfect visual polish and redesigns by **KYRAV WEB STUDIO**:
+1. **Navbar Enhancements**:
+   - Simplified navigation labels ("About", "Industries", "Services", "Results").
+   - Removed tagline from under the navbar logo and centered the hexagon AP mark with the name text.
+2. **Testimonial Carousel**:
+   - Redesigned the testimonials layout into a smooth, interactive carousel slider.
+3. **Executive Footer Redesign**:
+   - Implemented a premium radial gradient background (`radial-gradient(circle at top right, rgba(16, 20, 28, 0.98), rgba(7, 8, 10, 0.99))`) with backdrop blur.
+   - Added a vertical gold border accent next to the brand statement, custom underlines for column headings, and a smooth inline arrow (`→`) hover indicator for links.
+4. **Watermark Branding**:
+   - Added the inline **KYRAV** logo beside the watermark: `Developed by KYRAV WEB STUDIO | Where Confidence Meets Creativity`.
+   - Adjusted mobile media queries to center the bottom bar layout and prevent vertical text column squeezing.
+   - Reduced logo size to `12px` and set a vertical offset (`margin-top: -1px`) for pixel-perfect baseline text alignment.
+5. **Animation Fix**:
+   - Extended `counter.js` to observe all stats cards, including text-based cards (like "India & GCC"), so they play the slide-up keyframe animation upon scroll.
+
+---
+
 ## Contact
 
 **Client:**
@@ -663,6 +683,6 @@ Arun Prasath P
 
 ---
 
-*README last updated: June 26, 2026*
-*Brief version: v1.1*
-*Project status: Final Polish*
+*README last updated: July 15, 2026*
+*Brief version: v1.2*
+*Project status: Production Ready*

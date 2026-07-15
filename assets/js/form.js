@@ -218,6 +218,13 @@ export function initForm() {
   form.addEventListener('submit', event => {
     event.preventDefault();
 
+    // Honeypot check — silently reject bot submissions
+    const honeypot = document.getElementById('honeypot-field');
+    if (honeypot && honeypot.value.length > 0) {
+      // Bot detected — silently do nothing
+      return;
+    }
+
     // Final client-side check
     const requiredFields = [formFields.name, formFields.email, formFields.message];
     const isAllValid = requiredFields.every(f => {

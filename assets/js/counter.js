@@ -1,5 +1,5 @@
 export function initCounter() {
-  const statCards = document.querySelectorAll('.stat-card[data-count]');
+  const statCards = document.querySelectorAll('.stat-card');
   if (!statCards.length) return;
 
   const observer = new IntersectionObserver((entries) => {
@@ -10,7 +10,14 @@ export function initCounter() {
       if (!valueEl || valueEl.dataset.counted) return;
       valueEl.dataset.counted = 'true';
 
-      const raw = card.dataset.count || '0';
+      const raw = card.dataset.count;
+      if (!raw) {
+        // Non-numeric card (like "India & GCC"), trigger the slide-up animation immediately
+        valueEl.classList.add('counted');
+        observer.unobserve(card);
+        return;
+      }
+
       const target = parseInt(raw.replace(/[^\d]/g, ''), 10) || 0;
       const prefix = valueEl.textContent.match(/^\D+/)?.[0] || '';
       const suffix = valueEl.textContent.match(/\D+$/)?.[0] || '';
