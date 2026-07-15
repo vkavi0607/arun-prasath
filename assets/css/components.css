@@ -1897,3 +1897,40 @@ main > .section:nth-of-type(even) .competency-grid li { color: var(--color-ink-s
   background: rgba(255, 255, 255, 0.05);
 }
 
+/* Footer Bottom Layout & Legal Links Styling */
+.footer-bottom-info {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.5rem;
+}
+.footer-legal-links {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-family: var(--font-body), sans-serif;
+  font-size: 0.75rem;
+}
+.footer-legal-links a {
+  color: var(--color-text-dimmed);
+  text-decoration: none;
+  transition: color var(--transition-fast) ease;
+}
+.footer-legal-links a:hover {
+  color: var(--color-accent);
+}
+.footer-legal-links .separator {
+  color: var(--color-text-dimmed);
+  opacity: 0.35;
+  user-select: none;
+}
+
+/* Responsive alignment for footer bottom info */
+@media (max-width: 768px) {
+  .footer-bottom-info {
+    justify-content: center;
+    text-align: center;
+    gap: 0.75rem;
+  }
+}
+
