@@ -10,7 +10,35 @@ AOS.init({
   once: true,
   easing: 'ease-out-quart',
   offset: 60,
-  delay: 0,
+  delay: 0
+});
+
+/* ==========================================
+ * 8. FAQ ACCORDION LOGIC
+ * ========================================== */
+const faqQuestions = document.querySelectorAll('.faq-question');
+
+faqQuestions.forEach(question => {
+  question.addEventListener('click', () => {
+    const isExpanded = question.getAttribute('aria-expanded') === 'true';
+    const answer = question.nextElementSibling;
+    
+    // Close all other open FAQs
+    faqQuestions.forEach(q => {
+      if (q !== question) {
+        q.setAttribute('aria-expanded', 'false');
+        q.nextElementSibling.style.maxHeight = null;
+      }
+    });
+    
+    if (isExpanded) {
+      question.setAttribute('aria-expanded', 'false');
+      answer.style.maxHeight = null;
+    } else {
+      question.setAttribute('aria-expanded', 'true');
+      answer.style.maxHeight = answer.scrollHeight + "px";
+    }
+  });
 });
 
 initNav();

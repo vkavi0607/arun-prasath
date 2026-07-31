@@ -1,17 +1,14 @@
 export function initForm() {
   const form = document.getElementById('contact-form');
   const panel = document.querySelector('.connect-panel');
-  const progressBar = document.getElementById('form-progress-bar');
   const submitBtn = document.getElementById('form-submit-btn');
   const formStatus = document.getElementById('form-status');
   
   // Success Card elements
   const successCard = document.getElementById('success-card');
-  const summaryName = document.getElementById('summary-name');
-  const summaryEmail = document.getElementById('summary-email');
   const resetFormBtn = document.getElementById('reset-form-btn');
   
-  if (!form || !panel || !progressBar || !submitBtn) return;
+  if (!form || !panel || !submitBtn) return;
 
   // Form fields configuration
   const formFields = {
@@ -85,29 +82,9 @@ export function initForm() {
     }
   };
 
-  // SVG Checkmark icon for valid state
-  const checkmarkSVG = `
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-      <polyline points="20 6 9 17 4 12"></polyline>
-    </svg>
-  `;
-
-  // Helper to toggle has-value class for floating labels
-  function updateFloatingLabel(input) {
-    const group = input.closest('.form-group');
-    if (!group) return;
-    if (input.value.trim().length > 0) {
-      group.classList.add('has-value');
-    } else {
-      group.classList.remove('has-value');
-    }
-  }
-
-  // Initialize validation status icons and floating labels (handles autofill)
+  // Initialize form validation state (no floating labels or checkmarks)
   Object.values(formFields).forEach(field => {
-    const iconContainer = field.group.querySelector('.validation-status-icon');
-    if (iconContainer) iconContainer.innerHTML = checkmarkSVG;
-    updateFloatingLabel(field.input);
+    // Only bind initial states if needed
   });
 
   /* ==========================================
@@ -152,14 +129,8 @@ export function initForm() {
     
     if (field.isValid) {
       field.group.classList.remove('is-invalid');
-      if (field.isTouched || field.input.value.trim().length > 0) {
-        field.group.classList.add('is-valid');
-      } else {
-        field.group.classList.remove('is-valid');
-      }
       field.validationMsg.textContent = '';
     } else {
-      field.group.classList.remove('is-valid');
       if (field.isTouched) {
         field.group.classList.add('is-invalid');
         field.validationMsg.textContent = errorMsg;
@@ -175,68 +146,29 @@ export function initForm() {
     const totalRequired = requiredFields.length;
     const validRequired = requiredFields.filter(f => f.isValid).length;
     
-    const progressPercent = Math.round((validRequired / totalRequired) * 100);
-    progressBar.style.width = `${progressPercent}%`;
-
-    // Enable/disable submit button
-    const isFormValid = validRequired === totalRequired;
-    submitBtn.disabled = !isFormValid;
+    // Progress calculation can be used here if needed later
+    // const isFormValid = validRequired === totalRequired;
   }
 
   // Add event listeners to fields
   Object.values(formFields).forEach(field => {
     field.input.addEventListener('input', () => {
-      updateFloatingLabel(field.input);
       field.validate();
-      if (field.isValid) {
+      if (field.isValid || field.isTouched) {
         updateFieldUI(field);
-      } else if (field.isTouched) {
-        updateFieldUI(field);
-      } else {
-        field.group.classList.remove('is-valid');
       }
       updateFormProgress();
     });
 
     field.input.addEventListener('blur', () => {
-      updateFloatingLabel(field.input);
       field.isTouched = true;
       updateFieldUI(field);
       updateFormProgress();
     });
-
-    field.input.addEventListener('change', () => {
-      updateFloatingLabel(field.input);
-    });
   });
 
   /* ==========================================
-   * METHOD TOGGLE LOGIC (WhatsApp vs Email)
-   * ========================================== */
-  const toggleWhatsapp = document.getElementById('toggle-whatsapp');
-  const toggleEmail = document.getElementById('toggle-email');
-  const submitBtnText = document.getElementById('submit-btn-text');
-
-  let currentMethod = 'whatsapp'; // Default
-
-  if (toggleWhatsapp && toggleEmail && submitBtnText) {
-    toggleWhatsapp.addEventListener('click', () => {
-      toggleWhatsapp.classList.add('active');
-      toggleEmail.classList.remove('active');
-      currentMethod = 'whatsapp';
-      submitBtnText.textContent = 'Send via WhatsApp';
-    });
-
-    toggleEmail.addEventListener('click', () => {
-      toggleEmail.classList.add('active');
-      toggleWhatsapp.classList.remove('active');
-      currentMethod = 'email';
-      submitBtnText.textContent = 'Send via Email';
-    });
-  }
-
-  /* ==========================================
-   * 3. SUBMISSION FLOW (WHATSAPP/EMAIL INQUIRY)
+   * 3. SUBMISSION FLOW (WHATSAPP INQUIRY)
    * ========================================== */
   let formulatedMessageText = '';
 
@@ -263,47 +195,36 @@ export function initForm() {
       return;
     }
 
-    // Set button to loading state
-    submitBtn.classList.add('is-loading');
-    submitBtn.disabled = true;
-    formStatus.textContent = currentMethod === 'whatsapp' ? 'Preparing WhatsApp message...' : 'Preparing Email client...';
-    formStatus.style.color = 'var(--color-text-soft)';
-
     const name = formFields.name.input.value.trim();
-    const company = formFields.company.input.value.trim();
     const email = formFields.email.input.value.trim();
-    const message = formFields.message.input.value.trim();
 
-    // Formulate message body
-    const msgArray = [
-      'Hello Arun Prasath,',
-      '',
-      'I would like to discuss a business requirement.',
-      `Name: ${name}`,
-      company ? `Company: ${company}` : '',
-      `Email: ${email}`,
-      '',
-      `Message: ${message}`
-    ].filter(Boolean);
+    submitBtn.classList.add('is-loading');
+    formStatus.textContent = 'Sending your request...';
 
-    formulatedMessageText = msgArray.join('\n');
+    const formData = new FormData(form);
 
-    // Simulate connection delay for premium micro-experience (800ms)
-    setTimeout(() => {
-      if (currentMethod === 'whatsapp') {
-        const phone = form.dataset.whatsappPhone || '919894400663';
-        const url = `https://wa.me/${phone}?text=${encodeURIComponent(formulatedMessageText)}`;
-        window.open(url, '_blank');
-      } else {
-        const subject = 'Business Inquiry from Portfolio';
-        const url = `mailto:arun.pswamy@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(formulatedMessageText)}`;
-        window.location.href = url;
+    fetch(form.action, {
+      method: 'POST',
+      body: formData,
+      headers: {
+        'Accept': 'application/json'
       }
-
-      // Transition to Success Card
-      showSuccessCard(name, email);
-    }, 800);
+    })
+      .then(response => {
+        if (response.ok) {
+          showSuccessCard(name, email);
+          return;
+        }
+        return response.json().then(data => {
+          throw new Error(data.error || 'Unable to submit the form.');
+        });
+      })
+      .catch(() => {
+        submitBtn.classList.remove('is-loading');
+        formStatus.textContent = 'Submission failed. Please try again in a moment.';
+      });
   });
+
 
   function showSuccessCard(name, email) {
     // Hide form with fade
@@ -315,10 +236,6 @@ export function initForm() {
       form.style.display = 'none';
       panel.classList.add('show-success');
       
-      // Update success card details
-      summaryName.textContent = name;
-      summaryEmail.textContent = email;
-
       // Show success card
       successCard.style.display = 'flex';
       successCard.setAttribute('aria-hidden', 'false');
@@ -344,17 +261,9 @@ export function initForm() {
       Object.values(formFields).forEach(field => {
         field.isValid = field.input.id === 'company'; // company is optional, hence valid
         field.isTouched = false;
-        field.group.classList.remove('is-valid', 'is-invalid');
+        field.group.classList.remove('is-invalid');
         field.validationMsg.textContent = '';
       });
-
-      // Reset submission method
-      if (toggleWhatsapp && toggleEmail && submitBtnText) {
-        toggleWhatsapp.classList.add('active');
-        toggleEmail.classList.remove('active');
-        currentMethod = 'whatsapp';
-        submitBtnText.textContent = 'Send via WhatsApp';
-      }
 
       // Reset textarea height and counters
       adjustTextareaHeight();
@@ -370,40 +279,4 @@ export function initForm() {
     });
   }
 
-  /* ==========================================
-   * 5. DIRECT CONTACT BADGES COPY ACTIONS
-   * ========================================== */
-  const contactBadges = document.querySelectorAll('.contact-badge');
-
-  contactBadges.forEach(badge => {
-    const copyValue = badge.getAttribute('data-copy-value');
-    const copyBtn = badge.querySelector('.badge-copy-btn');
-    const originalTooltip = badge.getAttribute('data-tooltip') || 'Click to Copy';
-
-    if (!copyValue || !copyBtn) return;
-
-    copyBtn.addEventListener('click', async (e) => {
-      e.preventDefault();
-      e.stopPropagation(); // prevent triggering anchor link
-
-      try {
-        await navigator.clipboard.writeText(copyValue);
-        
-        // Show tooltip success state
-        badge.setAttribute('data-tooltip', 'Copied to Clipboard!');
-        badge.classList.add('copied');
-        
-        // Temporarily highlight the badge icon
-        copyBtn.style.color = '#10B981';
-
-        setTimeout(() => {
-          badge.setAttribute('data-tooltip', originalTooltip);
-          badge.classList.remove('copied');
-          copyBtn.style.color = '';
-        }, 2500);
-      } catch (err) {
-        console.error('Failed to copy contact: ', err);
-      }
-    });
-  });
 }

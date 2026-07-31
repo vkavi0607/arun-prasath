@@ -31,7 +31,10 @@ export function initNav() {
     }
     
     if (goTopBtn) {
-      if (window.scrollY > window.innerHeight / 2) {
+      const scrollPosition = window.scrollY + window.innerHeight;
+      const pageHeight = document.documentElement.scrollHeight;
+      const bottomThreshold = 120; // show when close to page end
+      if (scrollPosition >= pageHeight - bottomThreshold) {
         goTopBtn.classList.add('visible');
       } else {
         goTopBtn.classList.remove('visible');

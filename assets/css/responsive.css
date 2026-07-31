@@ -72,12 +72,13 @@
 /* --- Hero Section --- */
 .hero-section {
   overflow-x: hidden;
+  padding-top: 0;
 }
 .hero-grid {
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  padding-block: 2rem 3rem;
+  padding-block: 0 0;
 }
 .hero-copy {
   order: 2;
@@ -346,7 +347,6 @@ h2 {
   .hero-img-stage,
   .hero-portrait-bg { height: clamp(220px, 62vw, 280px); }
   .hero-copy h1 { font-size: clamp(1.75rem, 8.5vw, 2.25rem); }
-  .hero-tag { font-size: 0.82rem; padding: 0.5rem 0.85rem; }
   .hero-stats { gap: 0.75rem 0.5rem; }
   .connect-panel { padding: 1.35rem; }
   .connect-panel h2 { font-size: clamp(2rem, 10vw, 2.75rem); }
@@ -374,7 +374,6 @@ h2 {
 /* ── 5. TABLET LANDSCAPE / SMALL DESKTOP (640px – 899px) ── */
 @media (min-width: 640px) {
   .container { padding: 0 1.75rem; }
-  .hero-section { padding: 0; }
   .hero-grid { padding-block: 2.5rem 3.5rem; gap: 2rem; }
   .hero-portrait { width: min(100%, 360px); }
   .hero-copy h1 { font-size: clamp(2.5rem, 6vw, 3.25rem); }
@@ -477,12 +476,51 @@ h2 {
     overflow: hidden;
     position: relative;
     background:
-      radial-gradient(circle 600px at 75% 45%, rgba(212, 175, 55, 0.09), transparent 70%),
-      radial-gradient(circle at 12% 25%, rgba(212, 175, 55, 0.05) 0%, transparent 45%),
-      radial-gradient(circle at 45% 65%, rgba(198, 138, 43, 0.03) 0%, transparent 50%),
-      #09090B;
+      radial-gradient(circle 620px at 75% 45%, rgba(212, 175, 55, 0.10), transparent 68%),
+      radial-gradient(circle at 12% 25%, rgba(255,255,255,0.05) 0%, transparent 42%),
+      linear-gradient(180deg, #04060D 0%, #05080F 34%, #070B12 62%, #06080F 100%);
   }
-  .hero-background { display: none !important; }
+  .hero-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(circle at 15% 22%, rgba(212,175,55,0.06), transparent 18%),
+      radial-gradient(circle at 82% 18%, rgba(255,255,255,0.05), transparent 14%),
+      linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px),
+      linear-gradient(0deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+    background-size: 220px 220px, 180px 180px, 100% 100%, 100% 100%;
+    opacity: 0.18;
+    pointer-events: none;
+    z-index: 0;
+  }
+  .hero-section::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(138deg, transparent 40%, rgba(212,175,55,0.08) 50%, rgba(212,175,55,0.04) 52%, transparent 54%),
+      radial-gradient(circle at 22% 88%, rgba(212,175,55,0.10), transparent 20%),
+      radial-gradient(circle at 38% 64%, rgba(255,255,255,0.06), transparent 16%),
+      radial-gradient(circle at 78% 18%, rgba(255,255,255,0.05), transparent 12%);
+    opacity: 0.95;
+    mix-blend-mode: screen;
+    pointer-events: none;
+    z-index: 0;
+  }
+  .hero-background {
+    display: block !important;
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(180deg, rgba(4, 6, 13, 0.92), rgba(8, 10, 18, 0.35)),
+      radial-gradient(circle at 75% 45%, rgba(212,175,55,0.12), transparent 28%),
+      url("../images/bg-dentop.png") center/cover no-repeat;
+    background-blend-mode: overlay, screen, normal;
+    opacity: 1;
+    pointer-events: none;
+    z-index: 0;
+  }
 
   /* Container becomes full-height flex wrapper */
   .hero-grid {
@@ -545,7 +583,7 @@ h2 {
 
   /* RIGHT column — portrait image */
   .hero-visual {
-    position: static;              /* ← NO absolute positioning */
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -557,7 +595,23 @@ h2 {
     padding: 0;
     gap: 1.5rem;
   }
-  .hero-visual::after { display: none; }  /* remove the old gradient overlay */
+  .hero-visual::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -8%;
+    width: 520px;
+    height: 520px;
+    transform: translateX(-50%);
+    background: radial-gradient(circle, rgba(212,175,55,0.18), rgba(212,175,55,0.04) 24%, transparent 48%);
+    filter: blur(20px);
+    opacity: 0.7;
+    pointer-events: none;
+    z-index: -1;
+  }
+  .hero-visual::after {
+    display: none;
+  }
 
   .hero-img-full {
     display: block;
@@ -652,27 +706,38 @@ h2 {
   .contact-wrapper { grid-template-columns: 1fr 1.3fr; gap: 5rem; }
 }
 
-/* ── 7. TABLET (768px) — stacked, full-width image ── */
+/* ── 7. TABLET (768px) — stacked, centered hero ── */
 @media (max-width: 899px) {
   .hero-grid {
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 2rem;
     padding-inline: 1.5rem;
     padding-block: 3rem 2.5rem;
+    margin-inline: auto;
+    max-width: 960px;
   }
   .hero-copy {
     width: 100%;
     order: 1;
+    align-items: center;
+    text-align: center;
+  }
+  .hero-copy > * {
+    max-width: 740px;
+    margin-inline: auto;
   }
   .hero-visual {
     order: 2;
-    width: 92%;
+    width: 100%;
+    max-width: 720px;
     margin-inline: auto;
   }
   @media (min-width: 640px) {
     .hero-visual {
-      width: 70%;
+      width: 100%;
+      max-width: 720px;
     }
   }
   .hero-img-full {
