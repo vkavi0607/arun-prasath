@@ -72,7 +72,7 @@
 /* --- Hero Section --- */
 .hero-section {
   overflow-x: hidden;
-  padding-top: 0;
+  padding-top: 4.5rem; /* ensure first hero line clears the fixed mobile header */
 }
 .hero-grid {
   display: flex;
@@ -95,6 +95,7 @@
   letter-spacing: 0.18em;
   flex-wrap: wrap;
   align-self: flex-start;
+  max-width: 100%;
 }
 .hero-copy h1 {
   font-size: clamp(2rem, 9vw, 2.75rem);
@@ -342,10 +343,12 @@ h2 {
 /* ── 3. SMALL PHONES (< 480px) ── */
 @media (max-width: 479px) {
   .container { padding: 0 1rem; }
+  .hero-section { padding-top: 5rem; }
   .hero-grid { padding-block: 1.5rem 2rem; gap: 1.5rem; }
   .hero-portrait { width: min(100%, 280px); }
   .hero-img-stage,
   .hero-portrait-bg { height: clamp(220px, 62vw, 280px); }
+  .hero-copy .eyebrow { max-width: 100%; }
   .hero-copy h1 { font-size: clamp(1.75rem, 8.5vw, 2.25rem); }
   .hero-stats { gap: 0.75rem 0.5rem; }
   .connect-panel { padding: 1.35rem; }
@@ -534,7 +537,7 @@ h2 {
     gap: 3rem;                       /* reduced gap to 48px to eliminate empty space */
     align-items: center;
     min-height: calc(100vh - 72px);
-    padding-block: 5rem;
+    padding-block: 7rem 5rem;
     position: static;                /* not relative — no more absolute children */
     z-index: 1;
   }
