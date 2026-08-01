@@ -49,9 +49,16 @@ initCaseStudyModal();
 initForm();
 
 const preloader = document.getElementById('preloader');
+const PRELOADER_SEEN_KEY = 'preloaderSeen';
 if (preloader) {
-  window.setTimeout(() => {
-    preloader.classList.add('is-hidden');
-    window.setTimeout(() => preloader.remove(), 600);
-  }, 2000);
+  const hasSeenPreloader = sessionStorage.getItem(PRELOADER_SEEN_KEY) === 'true';
+  if (!hasSeenPreloader) {
+    window.setTimeout(() => {
+      preloader.classList.add('is-hidden');
+      window.setTimeout(() => preloader.remove(), 600);
+    }, 2000);
+    sessionStorage.setItem(PRELOADER_SEEN_KEY, 'true');
+  } else {
+    preloader.remove();
+  }
 }
