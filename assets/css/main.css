@@ -93,9 +93,12 @@ button { border: 0; background: none; }
 .section,
 .impact-section {
   padding: var(--section-padding);
-  background: var(--color-ink-mid);
+  background: var(--color-ink);
   position: relative;
-  border-bottom: 1px solid rgba(184, 146, 42, 0.4); /* Gold divider */
+  border-bottom: 1px solid rgba(184, 146, 42, 0.25);
+}
+.impact-section {
+  background: linear-gradient(180deg, #070b18 0%, #0c1830 100%);
 }
 
 main > .section:nth-of-type(even) {

@@ -129,6 +129,10 @@
   width: 100%;
   justify-content: center;
 }
+.hero-tagline {
+  max-width: 100%;
+  width: 100%;
+}
 .hero-stats {
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 0.85rem 0.5rem;
@@ -361,6 +365,96 @@ h2 {
 }
 
 /* ── 4. TABLET PORTRAIT (480px – 639px) ── */
+
+@media (max-width: 639px) {
+  .case-grid,
+  .insights-grid-custom,
+  .stats-grid {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 1rem;
+    padding-bottom: 1rem;
+    margin-left: -1.25rem;
+    margin-right: -1.25rem;
+    padding-left: 1.25rem;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .case-grid > article,
+  .insights-grid-custom > article,
+  .stats-grid > article {
+    flex: 0 0 90%;
+    min-width: 90%;
+    scroll-snap-align: start;
+    will-change: transform, opacity;
+    animation: premium-card-pop 0.85s ease-out both;
+    opacity: 0;
+  }
+
+  .case-grid > article:nth-child(1),
+  .insights-grid-custom > article:nth-child(1),
+  .stats-grid > article:nth-child(1) {
+    animation-delay: 0.04s;
+  }
+  .case-grid > article:nth-child(2),
+  .insights-grid-custom > article:nth-child(2),
+  .stats-grid > article:nth-child(2) {
+    animation-delay: 0.12s;
+  }
+  .case-grid > article:nth-child(3),
+  .insights-grid-custom > article:nth-child(3),
+  .stats-grid > article:nth-child(3) {
+    animation-delay: 0.20s;
+  }
+  .case-grid > article:nth-child(4),
+  .insights-grid-custom > article:nth-child(4),
+  .stats-grid > article:nth-child(4) {
+    animation-delay: 0.28s;
+  }
+
+  .case-grid::-webkit-scrollbar,
+  .insights-grid-custom::-webkit-scrollbar,
+  .stats-grid::-webkit-scrollbar {
+    display: none;
+  }
+  .case-grid,
+  .insights-grid-custom,
+  .stats-grid {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    scroll-behavior: smooth;
+  }
+  .case-grid {
+    gap: 1rem;
+  }
+  .case-grid > article,
+  .insights-grid-custom > article,
+  .stats-grid > article {
+    scroll-snap-stop: always;
+  }
+  .mobile-carousel-controls {
+    display: flex;
+    justify-content: center;
+    margin-top: 1.5rem;
+  }
+
+  @keyframes premium-card-pop {
+    0% {
+      opacity: 0;
+      transform: translateY(22px) scale(0.98);
+    }
+    60% {
+      opacity: 1;
+      transform: translateY(-6px) scale(1.005);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+}
 @media (min-width: 480px) {
   .container { padding: 0 1.5rem; }
   .hero-portrait { width: min(100%, 340px); }
@@ -370,6 +464,7 @@ h2 {
   .hero-buttons .button-secondary { width: auto; }
   .expertise-grid.expertise-grid-alt { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .services-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .trust-badge-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .stats-grid { grid-template-columns: repeat(3, 1fr); }
   .client-grid { grid-template-columns: repeat(1, 1fr); }
 }
@@ -387,6 +482,7 @@ h2 {
 
   .expertise-grid.expertise-grid-alt { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.1rem; }
   .services-grid, .services-list-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .trust-badge-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .case-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .client-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
   .stats-grid { grid-template-columns: repeat(3, 1fr); }
@@ -651,6 +747,7 @@ h2 {
 
   /* Services — 4-col on desktop */
   .services-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .trust-badge-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
 
   /* Clients / Case — 3-col */
   .case-grid,

@@ -5,13 +5,19 @@ import { initCounter } from './counter.js';
 import { initCaseStudyModal } from './casestudy.js';
 import { initForm } from './form.js';
 
-AOS.init({
-  duration: 800,
-  once: true,
-  easing: 'ease-out-quart',
-  offset: 60,
-  delay: 0
-});
+if (typeof AOS !== 'undefined' && AOS && typeof AOS.init === 'function') {
+  AOS.init({
+    duration: 800,
+    once: true,
+    easing: 'ease-out-quart',
+    offset: 60,
+    delay: 0
+  });
+} else {
+  // AOS failed to load (network/integrity). Guard so rest of JS can run.
+  // This prevents a missing AOS from blocking preloader removal and other scripts.
+  console.warn('AOS not available; skipping AOS.init');
+}
 
 /* ==========================================
  * 8. FAQ ACCORDION LOGIC
@@ -49,16 +55,9 @@ initCaseStudyModal();
 initForm();
 
 const preloader = document.getElementById('preloader');
-const PRELOADER_SEEN_KEY = 'preloaderSeen';
 if (preloader) {
-  const hasSeenPreloader = sessionStorage.getItem(PRELOADER_SEEN_KEY) === 'true';
-  if (!hasSeenPreloader) {
-    window.setTimeout(() => {
-      preloader.classList.add('is-hidden');
-      window.setTimeout(() => preloader.remove(), 600);
-    }, 2000);
-    sessionStorage.setItem(PRELOADER_SEEN_KEY, 'true');
-  } else {
-    preloader.remove();
-  }
+  window.setTimeout(() => {
+    preloader.classList.add('is-hidden');
+    window.setTimeout(() => preloader.remove(), 600);
+  }, 2000);
 }

@@ -314,6 +314,17 @@
   margin-top: 2rem;
   align-items: center;
 }
+.hero-tagline {
+  margin-top: 1rem;
+  font-family: var(--font-label);
+  font-size: 0.875rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.75);
+  text-align: left;
+  max-width: 560px;
+  width: 100%;
+}
 .hero-section .button-secondary,
 .hero-section .button-primary {
   border: 1.5px solid rgba(212,175,55,0.9);
@@ -550,6 +561,7 @@
 .expertise-card, .service-card, .insight-card, .client-grid > div, .market-grid article, .testimonial-card { padding: 1.75rem; min-height: 190px; border-top: 2px solid var(--color-accent); }
 .client-grid > div h3 { color: var(--color-white); font-size: 1rem; margin-bottom: 0.5rem; }
 .client-grid > div p { color: var(--color-text-dimmed); font-size: 0.9rem; line-height: 1.75; margin: 0; }
+.trust-badge-grid { display: grid; grid-template-columns: 1fr; gap: 1.5rem; margin-top: 2.5rem; margin-bottom: 2rem; }
 .service-card h3 { color: var(--color-white); margin-bottom: 0.5rem; }
 .service-card p { color: var(--color-text-dimmed); font-size: 0.9rem; line-height: 1.7; margin: 0; }
 .services-list-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 1.5rem 2.5rem; margin-top: 2rem; }
